@@ -1,4 +1,4 @@
-var Kuchenplaner = /** @class */ (function () {
+var Kuchenplaner = (function () {
     function Kuchenplaner() {
         var _this = this;
         this.employees = new EmployeesList();

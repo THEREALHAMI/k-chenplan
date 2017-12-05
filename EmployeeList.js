@@ -1,4 +1,4 @@
-var EmployeesList = /** @class */ (function () {
+var EmployeesList = (function () {
     function EmployeesList() {
         this.employeeList = [];
     }
