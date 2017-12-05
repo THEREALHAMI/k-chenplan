@@ -1,4 +1,4 @@
-var Shift = /** @class */ (function () {
+var Shift = (function () {
     function Shift(name, day, from, to) {
         this.name = '';
         this.day = null;

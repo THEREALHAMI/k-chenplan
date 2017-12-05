@@ -1,4 +1,4 @@
-var Employee = /** @class */ (function () {
+var Employee = (function () {
     function Employee(firstname, lastname, floor) {
         this.id = 0;
         this.firstname = '';
