@@ -1,4 +1,4 @@
-var TaskEmployee = /** @class */ (function () {
+var TaskEmployee = (function () {
     function TaskEmployee(tasksList, employeeList) {
         //this.assignEmployees();
         //this.nextEmployees();
