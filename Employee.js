@@ -1,17 +1,30 @@
-var Employee = (function () {
-    function Employee(name, complexity, floor) {
+var Employee = /** @class */ (function () {
+    function Employee(firstname, lastname, floor) {
         this.id = 0;
-        this.name = '';
+        this.firstname = '';
+        this.lastname = '';
         this.complexity = 0;
         this.floor = "";
         this.shiftList = new ShiftList();
-        this.name = name;
-        this.complexity = complexity;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.floor = floor;
         this.shiftList.get();
     }
-    Employee.prototype.getName = function () {
-        return this.name;
+    Employee.prototype.getId = function () {
+        return this.id;
+    };
+    Employee.prototype.getLastName = function () {
+        return this.lastname;
+    };
+    Employee.prototype.getFirstName = function () {
+        return this.firstname;
+    };
+    Employee.prototype.getComplexity = function () {
+        return this.complexity;
+    };
+    Employee.prototype.getFloor = function () {
+        return this.floor;
     };
     Employee.prototype.getShiftList = function () {
         return this.shiftList;

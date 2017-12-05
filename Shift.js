@@ -1,4 +1,4 @@
-var Shift = (function () {
+var Shift = /** @class */ (function () {
     function Shift(name, day, from, to) {
         this.name = '';
         this.day = null;
@@ -12,6 +12,12 @@ var Shift = (function () {
         this.timeSpan.to = to;
     }
     Shift.prototype.get = function () {
+    };
+    Shift.prototype.getName = function () {
+        return this.name;
+    };
+    Shift.prototype.getTimeSpan = function () {
+        return this.timeSpan;
     };
     return Shift;
 }());

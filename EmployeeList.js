@@ -1,4 +1,4 @@
-var EmployeesList = (function () {
+var EmployeesList = /** @class */ (function () {
     function EmployeesList() {
         this.employeeList = [];
     }
@@ -14,6 +14,9 @@ var EmployeesList = (function () {
         var existingShiftEmployee = this.employeeList.filter(function (employee) {
             return employee.getShiftList().has(shift);
         });
+        if (existingShiftEmployee.length === 0) {
+            return existingShiftEmployee;
+        }
         var lowestComplexity = existingShiftEmployee.sort(function (a, b) {
             return a.complexity - b.complexity;
         })[0].complexity;

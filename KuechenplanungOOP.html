@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta charset="UTF-8">
     <script src="Kuchenplaner.js"></script>
     <script src="Employee.js"></script>
     <script src="EmployeeList.js"></script>
@@ -13,12 +15,24 @@
     <script>
         var app = new Kuchenplaner();
 
+
     </script>
 
-
-
 </head>
-
 <body>
+
+    <table border="1" id="employeeList"></table>
+    <button id="viewEmployeeList">Current Employees</button><br /><br /><br /><br />
+    <form method="post">
+       <label>Vorname : </label> <input type="text" value="" placeholder="Max" ><br /><br />
+        <label>Nachname : </label><input type="text" value="" placeholder="Mustermann"><br /><br />
+        <label> Etage : 2 </label><input type="radio" name="etage" value="2">
+        <label> 3 </label><input type="radio" name="etage" value="3">
+        <label> 4 </label><input type="radio" name="etage" value="4"><br /><br />
+        <input id="addEmployee" type="submit" value="Add Employee">
+    </form>
+
+   <!-- <button onclick="app.addEmployee()"> Mitarbeiter Hinzuf&uuml;gen</button> -->
+
 </body>
 </html>

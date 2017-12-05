@@ -18,10 +18,12 @@ class EmployeesList {
     public getLowComplexityShift(shift:Shift){
 
         let existingShiftEmployee = this.employeeList.filter((employee) => {
-
-            return employee.getShiftList().has(shift)
-
+           return employee.getShiftList().has(shift);
         });
+
+        if(existingShiftEmployee.length === 0){
+            return existingShiftEmployee;
+        }
 
         let lowestComplexity = existingShiftEmployee.sort(function(a, b){
 
@@ -30,6 +32,7 @@ class EmployeesList {
         })[0].complexity;
 
         let filterdComplexity = existingShiftEmployee.filter(function(employee) {return employee.complexity === lowestComplexity});
+
         return filterdComplexity;
     }
 

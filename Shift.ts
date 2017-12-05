@@ -16,4 +16,11 @@ class Shift{
     public get(){
 
     }
+    public getName(){
+        return this.name;
+    }
+    public getTimeSpan(){
+        return this.timeSpan;
+    }
+
 }
