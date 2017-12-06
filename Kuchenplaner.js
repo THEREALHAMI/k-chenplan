@@ -15,22 +15,22 @@ var Kuchenplaner = (function () {
         this.createDummyEmployees();
         this.createDummyTasks();
         var taskEmployee = new TaskEmployee(this.tasks, this.employees);
-        this.viewEmployeeList();
     };
     Kuchenplaner.prototype.createDummyEmployees = function () {
-        var employee = new Employee('Peter', 'Meinhard', 3);
-        //this.createDummysShift(employee.getShiftList());
-        this.employees.addEmployee(employee);
-        employee = new Employee('Klaus', 'ist', 3);
-        //  this.createDummysShift(employee.getShiftList());
-        this.employees.addEmployee(employee);
-        employee = new Employee('Markus', 'ein', 3);
+        var employee = new Employee('Peter', 'Holzmann', 3);
         this.createDummysShiftEmployee(employee.getShiftList());
         this.employees.addEmployee(employee);
-        employee = new Employee('Gabriel', 'JU', 3);
-        //employee.addShiftList(this.createDummysShift());
+        employee = new Employee('Klaus', 'Herman', 3);
+        this.createDummysShiftEmployee(employee.getShiftList());
         this.employees.addEmployee(employee);
-        employee = new Employee('Hami', 'JO', 3);
+        employee = new Employee('Markus', 'Propst', 3);
+        this.createDummysShiftEmployee(employee.getShiftList());
+        this.employees.addEmployee(employee);
+        employee = new Employee('Gabriel', 'Barth', 3);
+        this.createDummysShiftEmployee(employee.getShiftList());
+        this.employees.addEmployee(employee);
+        employee = new Employee('Hami', 'Yildiz', 3);
+        this.createDummysShiftEmployee(employee.getShiftList());
         this.employees.addEmployee(employee);
     };
     /*public addTask(){
@@ -44,8 +44,10 @@ var Kuchenplaner = (function () {
          this.days.addDay(day);
      }*/
     Kuchenplaner.prototype.addEmployee = function () {
-        var employeeName = prompt("Name");
-        var employee = new Employee(employeeName);
+        var firstName = document.forms.addEmployee.vorname.value;
+        var lastName = document.forms.addEmployee.nachname.value;
+        var floor = document.forms.addEmployee.etage.value;
+        var employee = new Employee(firstName, lastName, floor);
         this.employees.addEmployee(employee);
     };
     Kuchenplaner.prototype.viewEmployeeList = function () {
@@ -60,9 +62,7 @@ var Kuchenplaner = (function () {
                 "<td>" + this.employees.get()[i].getLastName() + "</td>" +
                 "<td>" + this.employees.get()[i].getComplexity() + "</td><td>" + this.employees.get()[i].getFloor() + "</td></tr>";
         }
-        document.getElementById("viewEmployeeList").onclick = (function () {
-            document.getElementById("employeeList").innerHTML = tableArray;
-        });
+        document.getElementById("employeeList").innerHTML = tableArray;
     };
     Kuchenplaner.prototype.createDummyTasks = function () {
         var task = new Task('Spühlmaschine', 3, '4');

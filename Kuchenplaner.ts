@@ -19,28 +19,28 @@ class Kuchenplaner {
         this.createDummyEmployees();
         this.createDummyTasks();
         let taskEmployee = new TaskEmployee(this.tasks, this.employees);
-        this.viewEmployeeList();
+
     }
     private createDummyEmployees(){
 
-        let employee = new Employee('Peter', 'Meinhard',3,);
-       //this.createDummysShift(employee.getShiftList());
-
-        this.employees.addEmployee(employee);
-        employee = new Employee('Klaus', 'ist',3);
-      //  this.createDummysShift(employee.getShiftList());
-
-        this.employees.addEmployee(employee);
-        employee = new Employee('Markus', 'ein',3);
+        let employee = new Employee('Peter', 'Holzmann',3,);
         this.createDummysShiftEmployee(employee.getShiftList());
-
         this.employees.addEmployee(employee);
-        employee = new Employee('Gabriel', 'JU',3);
 
-        //employee.addShiftList(this.createDummysShift());
+        employee = new Employee('Klaus', 'Herman',3);
+        this.createDummysShiftEmployee(employee.getShiftList());
         this.employees.addEmployee(employee);
-        employee = new Employee('Hami', 'JO',3);
 
+        employee = new Employee('Markus', 'Propst',3);
+        this.createDummysShiftEmployee(employee.getShiftList());
+        this.employees.addEmployee(employee);
+
+        employee = new Employee('Gabriel', 'Barth',3);
+        this.createDummysShiftEmployee(employee.getShiftList());
+        this.employees.addEmployee(employee);
+
+        employee = new Employee('Hami', 'Yildiz',3);
+        this.createDummysShiftEmployee(employee.getShiftList());
         this.employees.addEmployee(employee);
     }
 
@@ -55,15 +55,18 @@ class Kuchenplaner {
          this.days.addDay(day);
      }*/
     public addEmployee() {
-        let employeeName = prompt("Name");
-        let employee = new Employee(employeeName);
+        let firstName = document.forms.addEmployee.vorname.value;
+        let lastName = document.forms.addEmployee.nachname.value;
+        let floor = document.forms.addEmployee.etage.value;
+        let employee = new Employee(firstName, lastName, floor);
         this.employees.addEmployee(employee);
+
     }
 
     private viewEmployeeList(){
         let tableArray="";
 
-        var objectProperty = Object.getOwnPropertyNames(this.employees.get()[0]);
+        let objectProperty = Object.getOwnPropertyNames(this.employees.get()[0]);
 
         for(let i =0; i < objectProperty.length; i++){
             tableArray+="<th>"+objectProperty[i]+"</th>";
@@ -75,10 +78,7 @@ class Kuchenplaner {
                 "<td>" + this.employees.get()[i].getLastName() + "</td>" +
                 "<td>" + this.employees.get()[i].getComplexity()+ "</td><td>" + this.employees.get()[i].getFloor() + "</td></tr>";
         }
-        document.getElementById("viewEmployeeList").onclick = (()=> {
-
             document.getElementById("employeeList").innerHTML = tableArray;
-        });
     }
 
     private createDummyTasks(){
