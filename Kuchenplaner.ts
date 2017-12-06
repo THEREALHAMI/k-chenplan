@@ -57,13 +57,14 @@ class Kuchenplaner {
     public addEmployee() {
         let firstName = document.forms.addEmployee.vorname.value;
         let lastName = document.forms.addEmployee.nachname.value;
-        let floor = document.forms.addEmployee.etage.value;
+        let floor =  parseInt(document.forms.addEmployee.etage.value);
         let employee = new Employee(firstName, lastName, floor);
         this.employees.addEmployee(employee);
+        this.createDummysShiftEmployee(employee.getShiftList());
 
     }
 
-    private viewEmployeeList(){
+    public viewEmployeeList(){
         let tableArray="";
 
         let objectProperty = Object.getOwnPropertyNames(this.employees.get()[0]);

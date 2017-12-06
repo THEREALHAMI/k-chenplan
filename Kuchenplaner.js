@@ -46,9 +46,10 @@ var Kuchenplaner = (function () {
     Kuchenplaner.prototype.addEmployee = function () {
         var firstName = document.forms.addEmployee.vorname.value;
         var lastName = document.forms.addEmployee.nachname.value;
-        var floor = document.forms.addEmployee.etage.value;
+        var floor = parseInt(document.forms.addEmployee.etage.value);
         var employee = new Employee(firstName, lastName, floor);
         this.employees.addEmployee(employee);
+        this.createDummysShiftEmployee(employee.getShiftList());
     };
     Kuchenplaner.prototype.viewEmployeeList = function () {
         var tableArray = "";
