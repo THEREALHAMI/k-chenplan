@@ -1,4 +1,4 @@
-var TaskEmployee = (function () {
+var TaskEmployee = /** @class */ (function () {
     function TaskEmployee(tasksList, employeeList) {
         //this.assignEmployees();
         //this.nextEmployees();
@@ -16,8 +16,10 @@ var TaskEmployee = (function () {
         //console.log(employeeList);
         // console.log(employeeList.get()[0].shiftList.get().length);
         this.assignEmployees(employeeList);
-        // console.table(this.taskEmployeeList);
     }
+    TaskEmployee.prototype.get = function () {
+        return this.taskEmployeeList;
+    };
     TaskEmployee.prototype.assignEmployees = function (employeeList) {
         this.taskEmployeeList.forEach(function (taskEmployee) {
             //console.log(taskEmployee);

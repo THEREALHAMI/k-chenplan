@@ -1,4 +1,4 @@
-var ShiftList = (function () {
+var ShiftList = /** @class */ (function () {
     function ShiftList() {
         this.shiftList = [];
     }

@@ -1,4 +1,4 @@
-var TasksList = (function () {
+var TasksList = /** @class */ (function () {
     function TasksList() {
         this.tasksList = [];
     }

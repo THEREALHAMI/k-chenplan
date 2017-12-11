@@ -6,8 +6,8 @@ class Employee {
     private floor="";
     private shiftList = new ShiftList();
 
-    constructor(firstname, lastname, floor) {
-
+    constructor(id, firstname, lastname, floor) {
+        this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.floor = floor;

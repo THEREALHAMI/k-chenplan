@@ -1,11 +1,12 @@
-var Employee = (function () {
-    function Employee(firstname, lastname, floor) {
+var Employee = /** @class */ (function () {
+    function Employee(id, firstname, lastname, floor) {
         this.id = 0;
         this.firstname = '';
         this.lastname = '';
         this.complexity = 0;
         this.floor = "";
         this.shiftList = new ShiftList();
+        this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.floor = floor;
