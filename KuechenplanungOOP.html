@@ -11,7 +11,8 @@
     <script src="ShiftList.js"></script>
     <script src="Shift.js"></script>
     <script src="TaskEmployee.js"></script>
-
+    <script src="ViewEmployeeList.js"></script>
+    <script src="ViewTaskEmployee.js"></script>
     <script>
         var app = new Kuchenplaner();
     </script>
@@ -21,9 +22,9 @@
 <body>
     
     <table border="0" id="employeeList"></table>
-    <button onclick="app.viewEmployeeList()" >Current Employees</button><br /><br /><br /><br />
+    <button onclick="app.viewEmployeesListe.renderEmployeeList(app.employees)" >Current Employees</button><br /><br /><br /><br />
 
-    <form  name="addEmployee" onsubmit="app.addEmployee();return false">
+    <form  name="addEmployee" onsubmit="app.viewEmployeesListe.addEmployee(app.employees);return false">
        <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
         <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
         <select name="floor">

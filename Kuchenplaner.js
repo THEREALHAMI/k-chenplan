@@ -3,6 +3,8 @@ var Kuchenplaner = /** @class */ (function () {
         var _this = this;
         this.employees = new EmployeesList();
         this.tasks = new TasksList();
+        this.viewEmployeesListe = new ViewEmployeeList();
+        this.viewTaskEmployee = new ViewTaskEmployee();
         window.onload = (function () {
             _this.initKuchenplaner();
         });
@@ -11,73 +13,7 @@ var Kuchenplaner = /** @class */ (function () {
         this.createDummyEmployees();
         this.createDummyTasks();
         var taskEmployee = new TaskEmployee(this.tasks, this.employees);
-        this.renderTaskEmployee(taskEmployee);
-    };
-    Kuchenplaner.prototype.addEmployee = function () {
-        var id = this.randomIdGenerator();
-        var employeeFirstName = document.forms.addEmployee.vorname.value; // document.getElementsByName("vorname")[0].value;
-        var employeeLastName = document.forms.addEmployee.nachname.value;
-        var employeeFloor = document.forms.addEmployee.floor.value;
-        var employeeFloorInt = parseInt(employeeFloor);
-        var employee = new Employee(id, employeeFirstName, employeeLastName, employeeFloorInt);
-        this.employees.addEmployee(employee);
-    };
-    Kuchenplaner.prototype.createDummyEmployees = function () {
-        var employee = new Employee(this.randomIdGenerator(), ' Peter', 'Meinhard', 3);
-        //this.createDummysShift(employee.getShiftList());
-        this.employees.addEmployee(employee);
-        employee = new Employee(this.randomIdGenerator(), 'Klaus', 'ist', 3);
-        //  this.createDummysShift(employee.getShiftList());
-        this.employees.addEmployee(employee);
-        employee = new Employee(this.randomIdGenerator(), 'Markus', 'ein', 3);
-        this.createDummysShiftEmployee(employee.getShiftList());
-        this.employees.addEmployee(employee);
-        employee = new Employee(this.randomIdGenerator(), 'Gabriel', 'JU', 3);
-        //employee.addShiftList(this.createDummysShift());
-        this.employees.addEmployee(employee);
-        employee = new Employee(this.randomIdGenerator(), 'Hami', 'JO', 3);
-        this.employees.addEmployee(employee);
-    };
-    Kuchenplaner.prototype.randomIdGenerator = function () {
-        return Math.random().toString(36).substr(2, 10);
-    };
-    Kuchenplaner.prototype.viewEmployeeList = function () {
-        var tableArray = "";
-        var objectProperty = Object.getOwnPropertyNames(this.employees.get()[0]);
-        for (var i = 0; i < objectProperty.length; i++) {
-            tableArray += "<th>" + objectProperty[i] + "</th>";
-        }
-        for (var i = 0; i < this.employees.get().length; i++) {
-            tableArray += "<tr><td>" + this.employees.get()[i].getId() + "</td>" +
-                "<td>" + this.employees.get()[i].getFirstName() + "</td>" +
-                "<td>" + this.employees.get()[i].getLastName() + "</td>" +
-                "<td>" + this.employees.get()[i].getComplexity() + "</td><td>" + this.employees.get()[i].getFloor() + "</td></tr>";
-        }
-        document.getElementById("employeeList").innerHTML = tableArray;
-    };
-    Kuchenplaner.prototype.renderTaskEmployee = function (taskEmployee) {
-        var tableArray = "<th>Tage / Aufgaben </th>";
-        var taskArray = [];
-        for (var i = 0; i < taskEmployee.get().length; i++) {
-            taskArray.push(taskEmployee.get()[i].task.name);
-        }
-        taskArray = taskArray.filter(function (name, index, Array) {
-            return Array.indexOf(name) == index;
-        });
-        taskArray.forEach(function (taskArrayElement) {
-            tableArray += "<th>" + taskArrayElement + "</th>";
-        });
-        var dayArray = [];
-        for (var i = 0; i < taskEmployee.get().length; i++) {
-            dayArray.push(taskEmployee.get()[i].shift.name);
-        }
-        dayArray = dayArray.filter(function (name, index, Array) {
-            return Array.indexOf(name) == index;
-        });
-        dayArray.forEach(function (dayArrayElement) {
-            tableArray += "<tr><td>" + dayArrayElement + "</td></tr>";
-        });
-        document.getElementById("taskEmployeeList").innerHTML = tableArray;
+        this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.tasks);
     };
     Kuchenplaner.prototype.createDummyTasks = function () {
         var task = new Task('Spühlmaschine', 3, '4');
@@ -120,15 +56,21 @@ var Kuchenplaner = /** @class */ (function () {
         shift = new Shift('Freitag', '0', 7, 22);
         shiftList.addShift(shift);
     };
+    Kuchenplaner.prototype.createDummyEmployees = function () {
+        var employee = new Employee(0, ' Peter', 'Meinhard', 3);
+        this.createDummysShift(employee.getShiftList());
+        this.employees.addEmployee(employee);
+        employee = new Employee(0, 'Klaus', 'juti', 3);
+        this.createDummysShift(employee.getShiftList());
+        this.employees.addEmployee(employee);
+        employee = new Employee(0, 'Markus', 'lukizu', 3);
+        this.createDummysShiftEmployee(employee.getShiftList());
+        this.employees.addEmployee(employee);
+        employee = new Employee(0, 'Gabriel', 'olli', 3);
+        // this.createDummysShift(employee.getShiftList());
+        this.employees.addEmployee(employee);
+        employee = new Employee(0, 'Hami', 'polas', 3);
+        this.employees.addEmployee(employee);
+    };
     return Kuchenplaner;
 }());
-/*public addTask(){
-         let taskName = prompt("Aufgabenname");
-         let task = new Task(taskName);
-         this.tasks.addTask(task);
-     }
-     public addDay(){
-         let dayName = prompt("Tag Name");
-         let day = new Day(dayName);
-         this.days.addDay(day);
-     }*/ 
