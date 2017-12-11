@@ -34,5 +34,7 @@ var TaskEmployee = /** @class */ (function () {
             nextEmployee.addComplexity(taskEmployee.task.getComplexity());
         });
     };
+    TaskEmployee.prototype.employeefromTaskandShift = function () {
+    };
     return TaskEmployee;
 }());
