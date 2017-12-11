@@ -15,6 +15,7 @@ var Kuchenplaner = (function () {
         this.createDummyEmployees();
         this.createDummyTasks();
         var taskEmployee = new TaskEmployee(this.tasks, this.employees);
+        this.viewTaskEmployeeList(taskEmployee);
     };
     Kuchenplaner.prototype.createDummyEmployees = function () {
         var employee = new Employee('Peter', 'Holzmann', 3);
@@ -64,6 +65,19 @@ var Kuchenplaner = (function () {
                 "<td>" + this.employees.get()[i].getComplexity() + "</td><td>" + this.employees.get()[i].getFloor() + "</td></tr>";
         }
         document.getElementById("employeeList").innerHTML = tableArray;
+    };
+    Kuchenplaner.prototype.viewTaskEmployeeList = function (taskEmployee) {
+        var tableArray = "";
+        var objectProperty = Object.getOwnPropertyNames(taskEmployee.get()[0]);
+        for (var i = 0; i < objectProperty.length; i++) {
+            tableArray += "<th>" + objectProperty[i] + "</th>";
+        }
+        for (var i = 0; i < taskEmployee.get().length; i++) {
+            tableArray += "<tr><td>" + taskEmployee.get()[i].shift.name + "</td>" +
+                "<td>" + taskEmployee.get()[i].task.name + "</td>" +
+                "<td>" + taskEmployee.get()[i].employee + "</td></tr>";
+        }
+        document.getElementById("taskEmployeeList").innerHTML = tableArray;
     };
     Kuchenplaner.prototype.createDummyTasks = function () {
         var task = new Task('Spühlmaschine', 3, '4');

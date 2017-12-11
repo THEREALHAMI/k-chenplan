@@ -30,6 +30,9 @@ class TaskEmployee{
         this.assignEmployees(employeeList);
        // console.table(this.taskEmployeeList);
     }
+    public get(){
+        return this.taskEmployeeList;
+    }
 
 
     public assignEmployees(employeeList){

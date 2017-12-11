@@ -19,7 +19,7 @@ class Kuchenplaner {
         this.createDummyEmployees();
         this.createDummyTasks();
         let taskEmployee = new TaskEmployee(this.tasks, this.employees);
-
+        this.viewTaskEmployeeList(taskEmployee);
     }
     private createDummyEmployees(){
 
@@ -80,6 +80,20 @@ class Kuchenplaner {
                 "<td>" + this.employees.get()[i].getComplexity()+ "</td><td>" + this.employees.get()[i].getFloor() + "</td></tr>";
         }
             document.getElementById("employeeList").innerHTML = tableArray;
+    }
+
+    public viewTaskEmployeeList(taskEmployee){
+        let tableArray = "";
+        let objectProperty = Object.getOwnPropertyNames(taskEmployee.get()[0]);
+        for(let i = 0; i < objectProperty.length; i++){
+            tableArray+="<th>"+objectProperty[i]+"</th>";
+        }
+        for(let i = 0; i < taskEmployee.get().length; i++){
+            tableArray+="<tr><td>" + taskEmployee.get()[i].shift.name + "</td>" +
+                "<td>" + taskEmployee.get()[i].task.name + "</td>"+
+                "<td>" + taskEmployee.get()[i].employee + "</td></tr>";
+        }
+        document.getElementById("taskEmployeeList").innerHTML = tableArray;
     }
 
     private createDummyTasks(){

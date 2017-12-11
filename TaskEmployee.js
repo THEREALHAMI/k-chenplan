@@ -18,6 +18,9 @@ var TaskEmployee = (function () {
         this.assignEmployees(employeeList);
         // console.table(this.taskEmployeeList);
     }
+    TaskEmployee.prototype.get = function () {
+        return this.taskEmployeeList;
+    };
     TaskEmployee.prototype.assignEmployees = function (employeeList) {
         this.taskEmployeeList.forEach(function (taskEmployee) {
             //console.log(taskEmployee);

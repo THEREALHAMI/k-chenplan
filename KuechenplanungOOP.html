@@ -26,8 +26,8 @@
 
 
     <form name="addEmployee" onsubmit="app.addEmployee(); return false">
-       <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max"><br /><br />
-        <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
+       <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" required><br /><br />
+        <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann" required><br /><br />
         <label> Etage : </label>
         <select  name="etage" typeof="number">
             <option value="2" >2</option>
@@ -37,6 +37,9 @@
         <br /><br />
         <input type="submit" value="Add Employee">
     </form>
+
+    <table border="1" id="taskEmployeeList"></table>
+
 
    <!-- <button onclick="app.addEmployee()"> Mitarbeiter Hinzuf&uuml;gen</button> -->
 
