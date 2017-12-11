@@ -15,6 +15,7 @@ var Kuchenplaner = (function () {
         this.createDummyEmployees();
         this.createDummyTasks();
         var taskEmployee = new TaskEmployee(this.tasks, this.employees);
+        console.log(taskEmployee);
         this.viewTaskEmployeeList(taskEmployee);
     };
     Kuchenplaner.prototype.createDummyEmployees = function () {
@@ -67,32 +68,35 @@ var Kuchenplaner = (function () {
         document.getElementById("employeeList").innerHTML = tableArray;
     };
     Kuchenplaner.prototype.viewTaskEmployeeList = function (taskEmployee) {
-        var tableArray = "";
-        var objectProperty = Object.getOwnPropertyNames(taskEmployee.get()[0]);
-        for (var i = 0; i < objectProperty.length; i++) {
-            tableArray += "<th>" + objectProperty[i] + "</th>";
+        /*let tableArray = "";
+        let objectProperty = Object.getOwnPropertyNames(taskEmployee.get()[0]);
+        for(let i = 0; i < objectProperty.length; i++){
+            tableArray+="<th>"+objectProperty[i]+"</th>";
         }
-        for (var i = 0; i < taskEmployee.get().length; i++) {
-            tableArray += "<tr><td>" + taskEmployee.get()[i].shift.name + "</td>" +
-                "<td>" + taskEmployee.get()[i].task.name + "</td>" +
+        for(let i = 0; i < taskEmployee.get().length; i++){
+            tableArray+="<tr><td>" + taskEmployee.get()[i].shift.name + "</td>" +
+                "<td>" + taskEmployee.get()[i].task.name + "</td>"+
                 "<td>" + taskEmployee.get()[i].employee + "</td></tr>";
         }
-        document.getElementById("taskEmployeeList").innerHTML = tableArray;
+        document.getElementById("taskEmployeeList").innerHTML = tableArray;*/
+        var table = {
+            tableHeader: [],
+            tableBody: []
+        };
+        table.tableHeader = taskEmployee.get().filter(function (a) { return a.task.name; });
+        console.log(table.tableHeader);
     };
     Kuchenplaner.prototype.createDummyTasks = function () {
-        var task = new Task('Spühlmaschine', 3, '4');
+        var task = new Task('Spühlmaschine', 3, 3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
-        task = new Task('Townhall', 3, 5);
+        task = new Task('Townhall', 3, 3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
-        task = new Task('Maschine', 2, 4);
+        task = new Task('Sirup', 2, 3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
-        task = new Task('Maschine', 1, 2);
-        this.createDummysShift(task.getShiftList());
-        this.tasks.addTask(task);
-        task = new Task('Maschine', 4, 1);
+        task = new Task('Wasserkocher entkalcken', 1, 3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
     };

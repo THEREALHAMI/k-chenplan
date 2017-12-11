@@ -19,6 +19,7 @@ class Kuchenplaner {
         this.createDummyEmployees();
         this.createDummyTasks();
         let taskEmployee = new TaskEmployee(this.tasks, this.employees);
+        console.log(taskEmployee);
         this.viewTaskEmployeeList(taskEmployee);
     }
     private createDummyEmployees(){
@@ -83,7 +84,7 @@ class Kuchenplaner {
     }
 
     public viewTaskEmployeeList(taskEmployee){
-        let tableArray = "";
+        /*let tableArray = "";
         let objectProperty = Object.getOwnPropertyNames(taskEmployee.get()[0]);
         for(let i = 0; i < objectProperty.length; i++){
             tableArray+="<th>"+objectProperty[i]+"</th>";
@@ -93,23 +94,28 @@ class Kuchenplaner {
                 "<td>" + taskEmployee.get()[i].task.name + "</td>"+
                 "<td>" + taskEmployee.get()[i].employee + "</td></tr>";
         }
-        document.getElementById("taskEmployeeList").innerHTML = tableArray;
+        document.getElementById("taskEmployeeList").innerHTML = tableArray;*/
+        let table = {
+            tableHeader : [],
+            tableBody : []
+        };
+        table.tableHeader = taskEmployee.get().filter(a => {return a.task.name});
+        console.log(table.tableHeader);
+
+
     }
 
     private createDummyTasks(){
-        let task = new Task('Spühlmaschine',3, '4');
+        let task = new Task('Spühlmaschine',3, 3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
-        task = new Task('Townhall',3,5);
+        task = new Task('Townhall',3,3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
-        task = new Task('Maschine',2,4);
+        task = new Task('Sirup',2,3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
-        task = new Task('Maschine',1,2);
-        this.createDummysShift(task.getShiftList());
-        this.tasks.addTask(task);
-        task = new Task('Maschine',4,1);
+        task = new Task('Wasserkocher entkalcken',1,3);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
     }
