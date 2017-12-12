@@ -1,4 +1,4 @@
-var ViewTaskEmployee = /** @class */ (function () {
+var ViewTaskEmployee = (function () {
     function ViewTaskEmployee() {
     }
     ViewTaskEmployee.prototype.renderTaskEmployee = function (taskEmployee, tasks) {
@@ -26,7 +26,7 @@ var ViewTaskEmployee = /** @class */ (function () {
         var name = "";
         this.tasksEmployees.forEach(function (taskEmployee) {
             _this.tasks.forEach(function (task) {
-                if ((task.name === taskEmployee.task.name) && (taskEmployee.shift.name === day)) {
+                if ((task.name === taskEmployee.task.name) && (taskEmployee.shift.getName() === day)) {
                     name += "<td>" + taskEmployee.employee.firstname + "</td>";
                 }
             });

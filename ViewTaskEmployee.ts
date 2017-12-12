@@ -1,6 +1,14 @@
+interface taskEmployee{
+
+    shift:Shift;
+    task: Task;
+    employee: Employee;
+
+}
+
 class ViewTaskEmployee{
     private tasks: Array<Task>;
-    private tasksEmployees : Array<Employee>;
+    private tasksEmployees : Array<taskEmployee>;
     constructor(){
 
     }
@@ -41,7 +49,7 @@ class ViewTaskEmployee{
 
         this.tasksEmployees.forEach((taskEmployee)=>{
             this.tasks.forEach((task) =>{
-                if( (task.name === taskEmployee.task.name) && (taskEmployee.shift.name === day)) {
+                if( (task.name === taskEmployee.task.name) && (taskEmployee.shift.getName() === day)) {
                     name +=`<td>${taskEmployee.employee.firstname}</td>`;
                 }
             });
