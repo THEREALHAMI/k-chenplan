@@ -34,7 +34,7 @@ class Kuchenplaner {
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
         task = new Task('Wasserkocher',4,1);
-        this.createDummysShift(task.getShiftList());
+        this.createDummysShiftEmployeeWasserkocher(task.getShiftList());
         this.tasks.addTask(task);
     }
     private createDummysShift(shiftList) {
@@ -62,6 +62,11 @@ class Kuchenplaner {
         shift = new Shift('Freitag', '0',7,22);
         shiftList.addShift(shift);
     }
+    private createDummysShiftEmployeeWasserkocher(shiftList) {
+
+        let shift = new Shift('Mittwoch', '0',7,22);
+        shiftList.addShift(shift);
+
     private createDummyEmployees(){
 
         let employee = new Employee( 0,'Peter', 'Meinhard',3,);

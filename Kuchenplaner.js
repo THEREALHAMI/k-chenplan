@@ -29,7 +29,7 @@ var Kuchenplaner = /** @class */ (function () {
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
         task = new Task('Wasserkocher', 4, 1);
-        this.createDummysShift(task.getShiftList());
+        this.createDummysShiftEmployeeWasserkocher(task.getShiftList());
         this.tasks.addTask(task);
     };
     Kuchenplaner.prototype.createDummysShift = function (shiftList) {
@@ -54,6 +54,10 @@ var Kuchenplaner = /** @class */ (function () {
         shift = new Shift('Donnerstag', '0', 7, 22);
         shiftList.addShift(shift);
         shift = new Shift('Freitag', '0', 7, 22);
+        shiftList.addShift(shift);
+    };
+    Kuchenplaner.prototype.createDummysShiftEmployeeWasserkocher = function (shiftList) {
+        var shift = new Shift('Mittwoch', '0', 7, 22);
         shiftList.addShift(shift);
     };
     Kuchenplaner.prototype.createDummyEmployees = function () {
