@@ -16,6 +16,8 @@ var TaskEmployee = /** @class */ (function () {
         //console.log(employeeList);
         // console.log(employeeList.get()[0].shiftList.get().length);
         this.assignEmployees(employeeList);
+        this.giveEmployeebyTaskandShift();
+        console.log(this.taskEmployeeList);
     }
     TaskEmployee.prototype.get = function () {
         return this.taskEmployeeList;
@@ -34,7 +36,10 @@ var TaskEmployee = /** @class */ (function () {
             nextEmployee.addComplexity(taskEmployee.task.getComplexity());
         });
     };
-    TaskEmployee.prototype.employeefromTaskandShift = function () {
+    TaskEmployee.prototype.giveEmployeebyTaskandShift = function () {
+        this.taskEmployeeList.forEach(function (element) {
+            //console.log(element);
+        });
     };
     return TaskEmployee;
 }());

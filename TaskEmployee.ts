@@ -28,11 +28,12 @@ class TaskEmployee{
 
 
         this.assignEmployees(employeeList);
+        this.giveEmployeebyTaskandShift();
+        console.log(this.taskEmployeeList);
     }
     public get(){
         return this.taskEmployeeList;
     }
-
 
     public assignEmployees(employeeList){
 
@@ -55,8 +56,15 @@ class TaskEmployee{
         })
     }
 
-    public employeefromTaskandShift(){
-     
+    public giveEmployeebyTaskandShift(){
+      this.taskEmployeeList.forEach((element)=>{
+            //console.log(element);
+
+      });
+
+
+
+
     }
 
 }

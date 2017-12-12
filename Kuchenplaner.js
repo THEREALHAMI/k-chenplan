@@ -57,7 +57,7 @@ var Kuchenplaner = /** @class */ (function () {
         shiftList.addShift(shift);
     };
     Kuchenplaner.prototype.createDummyEmployees = function () {
-        var employee = new Employee(0, ' Peter', 'Meinhard', 3);
+        var employee = new Employee(0, 'Peter', 'Meinhard', 3);
         this.createDummysShift(employee.getShiftList());
         this.employees.addEmployee(employee);
         employee = new Employee(0, 'Klaus', 'juti', 3);
