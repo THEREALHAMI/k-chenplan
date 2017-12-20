@@ -1,4 +1,4 @@
-var Task = (function () {
+var Task = /** @class */ (function () {
     function Task(name, complexity, floor) {
         this.name = '';
         this.complexity = 0;

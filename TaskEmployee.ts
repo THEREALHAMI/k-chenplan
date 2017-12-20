@@ -29,7 +29,6 @@ class TaskEmployee{
 
         this.assignEmployees(employeeList);
         this.giveEmployeebyTaskandShift();
-        console.log(this.taskEmployeeList);
     }
     public get(){
         return this.taskEmployeeList;

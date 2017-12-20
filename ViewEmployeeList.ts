@@ -28,7 +28,8 @@ class ViewEmployeeList{
         let employeeLastName = document.forms.addEmployee.nachname.value ;
         let employeeFloor= document.forms.addEmployee.floor.value;
         let employeeFloorInt = parseInt(employeeFloor);
-        let employee = new Employee(0,employeeFirstName,employeeLastName,employeeFloorInt);
+        let employee = new Employee(employeeFirstName,employeeLastName,employeeFloorInt,employeeComplexity,0);
+
         employees.addEmployee(employee)
 
     }

@@ -1,16 +1,18 @@
-class Employee {
-    private id = 0;
+ class Employee {
+
     private firstname='';
     private lastname = '';
     private complexity = 0;
     private floor="";
+    private id = 0;
     private shiftList = new ShiftList();
 
-    constructor(id, firstname, lastname, floor) {
+    constructor(firstname, lastname, floor, complexity,id) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.floor = floor;
+        this.complexity = complexity;
         this.shiftList.get();
     }
     public getId(){

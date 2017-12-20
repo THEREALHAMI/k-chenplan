@@ -17,7 +17,6 @@ var TaskEmployee = /** @class */ (function () {
         // console.log(employeeList.get()[0].shiftList.get().length);
         this.assignEmployees(employeeList);
         this.giveEmployeebyTaskandShift();
-        console.log(this.taskEmployeeList);
     }
     TaskEmployee.prototype.get = function () {
         return this.taskEmployeeList;

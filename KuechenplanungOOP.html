@@ -13,6 +13,7 @@
     <script src="TaskEmployee.js"></script>
     <script src="ViewEmployeeList.js"></script>
     <script src="ViewTaskEmployee.js"></script>
+    <script src="AjaxAdapter.js"></script>
     <script>
         var app = new Kuchenplaner();
     </script>
@@ -24,7 +25,7 @@
     <table border="0" id="employeeList"></table>
     <button onclick="app.viewEmployeesListe.renderEmployeeList(app.employees)" >Current Employees</button><br /><br /><br /><br />
 
-    <form  name="addEmployee" onsubmit="app.viewEmployeesListe.addEmployee(app.employees);return false">
+    <form  name="addEmployee" method="post" onsubmit="app.viewEmployeesListe.addEmployee(app.employees); return false">
        <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
         <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
         <select name="floor">
@@ -33,8 +34,10 @@
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
+
         <br /><br />
         <input type="submit" value="Add Employee">
+
     </form><br /><br />
 
     <table border="1" id="taskEmployeeList"></table>

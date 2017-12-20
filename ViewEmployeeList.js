@@ -21,7 +21,7 @@ var ViewEmployeeList = /** @class */ (function () {
         var employeeLastName = document.forms.addEmployee.nachname.value;
         var employeeFloor = document.forms.addEmployee.floor.value;
         var employeeFloorInt = parseInt(employeeFloor);
-        var employee = new Employee(0, employeeFirstName, employeeLastName, employeeFloorInt);
+        var employee = new Employee(employeeFirstName, employeeLastName, employeeFloorInt, employeeComplexity, 0);
         employees.addEmployee(employee);
     };
     return ViewEmployeeList;
