@@ -42,15 +42,16 @@ class ViewTaskEmployee{
 
 
         document.getElementById("taskEmployeeList").innerHTML= tableArray;
+
     }
 
-    private employeeName(day){
-        var name = "" ;
+   private employeeName(day){
+        var name = "";
 
         this.tasksEmployees.forEach((taskEmployee)=>{
             this.tasks.forEach((task) =>{
                 if( (task.name === taskEmployee.task.name) && (taskEmployee.shift.getName() === day)) {
-                    name +=`<td>${taskEmployee.employee.firstname}</td>`;
+                    name += `<td>${taskEmployee.employee.firstname}</td>`;
                 }
             });
         });

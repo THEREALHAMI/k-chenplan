@@ -14,6 +14,8 @@
         this.floor = floor;
         this.complexity = complexity;
         this.shiftList.get();
+
+
     }
     public getId(){
         return this.id;

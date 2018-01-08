@@ -4,8 +4,6 @@ class Kuchenplaner {
     private viewEmployeesListe = new ViewEmployeeList();
     private viewTaskEmployee = new ViewTaskEmployee();
 
-
-
     constructor() {
         window.onload = (()=>{
             this.initKuchenplaner()
@@ -24,7 +22,7 @@ class Kuchenplaner {
     }
 
     private createDummyTasks(){
-        let task = new Task('Spühlmaschine',3, '4');
+        let task = new Task('Spühlmaschine',3, 4);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
         task = new Task('Townhall',3,5);

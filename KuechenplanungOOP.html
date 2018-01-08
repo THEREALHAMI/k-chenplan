@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
 
     <meta charset="UTF-8">
     <script src="Kuchenplaner.js"></script>
@@ -14,20 +13,34 @@
     <script src="ViewEmployeeList.js"></script>
     <script src="ViewTaskEmployee.js"></script>
     <script src="AjaxAdapter.js"></script>
+    <script src="EmployeeList.js"></script>
+    <script src="ViewEmployeeList.js"></script>
+    <script src="Helper.js"></script>
+
+
     <script>
         var app = new Kuchenplaner();
     </script>
 
+    <style>
+        body{
+            text-align: center;
+        }
+        td{
+            padding: 5px;
+        }
+    </style>
+
 
 </head>
 <body>
-    
     <table border="0" id="employeeList"></table>
     <button onclick="app.viewEmployeesListe.renderEmployeeList(app.employees)" >Current Employees</button><br /><br /><br /><br />
 
     <form  name="addEmployee" method="post" onsubmit="app.viewEmployeesListe.addEmployee(app.employees); return false">
-       <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
+        <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
         <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
+
         <select name="floor">
             <option value="Etage">Etage w&auml;hlen </option>
             <option value="2">2</option>
@@ -39,6 +52,32 @@
         <input type="submit" value="Add Employee">
 
     </form><br /><br />
+
+    <form name="deleteEmployee" method="post" onsubmit="app.viewEmployeesListe.deleteEmployee(); return false">
+
+        <input name="EmployeeId" type="number" value="" placeholder="ID eingeben"> <br /> <br />
+        <input type="submit" value="Delete Employee">
+    </form><br /><br /><br /><br /><br /><br />
+
+    <form  name="changeEmployee" method="post" onsubmit="app.viewEmployeesListe.changeEmployee(); return false">
+        <label>Id : </label><input name="id" type="number" value="" placeholder="Id eingeben"> <br />  <br />
+        <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
+        <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
+        <label>complexity : </label><input name="complexity" type="number" value="0" placeholder="0"><br /><br />
+        <select name="floor">
+            <option value="Etage">Etage w&auml;hlen </option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <br /><br />
+        <input type="submit" value="Add Employee">
+
+    </form>
+
+
+
 
     <table border="1" id="taskEmployeeList"></table>
    <!-- <button onclick="app.renderTaskEmployee()">TaskEmployeeList</button> -->

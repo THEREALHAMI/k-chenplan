@@ -1,46 +1,36 @@
-class EmployeesList {
+ class EmployeesList {
     private employeeList : Array<Employee> = [];
     private adapter = new AjaxAdapter();
-
     constructor() {
-        this.adapter.get("http://localhost:3000/api/Employees",this.test);
+        this.adapter.get("http://localhost:3000/api/Employees",(data)=>{this.employeeFromDatabank(data)});
 
-        console.log(this.employeeList);
     }
+
     public addEmployee(employee){
         this.employeeList.push(employee);
     }
 
-    public test(data)
+    private employeeFromDatabank(data)
     {
-        let employeeApi = data;
+          data.forEach((elment)=>{
 
-
-
-        employeeApi.forEach((elment)=>{
-          let employee =  new Employee(elment.firstname,elment.lastname,elment.complexity , elment.floor, elment.id);
-            this.employeeList.push(employee);
+          let employee = new Employee(elment.firstname,elment.lastname, elment.floor,elment.complexity , elment.id);
+            this.addEmployee(employee);
         });
 
+
     }
-
-
-
 
     public get(): Array<Employee>{
         return this.employeeList;
     }
 
 
-
-    public compareTimeSpan(from, to){
-
-    }
     public getLowComplexityShift(shift:Shift){
 
-        let existingShiftEmployee = this.employeeList.filter((employee) => {
-           return employee.getShiftList().has(shift);
-        });
+        let existingShiftEmployee = this.employeeList; /*.filter((employee) => {
+           return  employee.getShiftList().has(shift);
+        });*/
 
         if(existingShiftEmployee.length === 0){
             return existingShiftEmployee;

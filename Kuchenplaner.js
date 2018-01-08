@@ -16,7 +16,7 @@ var Kuchenplaner = /** @class */ (function () {
         this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.tasks);
     };
     Kuchenplaner.prototype.createDummyTasks = function () {
-        var task = new Task('Spühlmaschine', 3, '4');
+        var task = new Task('Spühlmaschine', 3, 4);
         this.createDummysShift(task.getShiftList());
         this.tasks.addTask(task);
         task = new Task('Townhall', 3, 5);

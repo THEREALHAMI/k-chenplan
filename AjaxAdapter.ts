@@ -16,14 +16,41 @@ class AjaxAdapter implements IAjaxAdapter{
         xhttp.open("GET",url,true);
         xhttp.send();
     }
-    post(){
-
+    post(url, data, successCallBack){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let text = "Successfully"
+                successCallBack(text);
+            }
+        };
+        xhttp.open("POST",url,true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(data);
     }
-    put(){
-
+    put(url, data, successCallback){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let text = "Successfully";
+                successCallback(text);
+            }
+        };
+        xhttp.open("PUT",url,true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(data);
     }
-    delete(){
-
+    delete(url,successCallBack){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let text = "Employee deleted";
+                successCallBack(text);
+            }
+        };
+        xhttp.open("DELETE",url,true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(null);
     }
 }
 
