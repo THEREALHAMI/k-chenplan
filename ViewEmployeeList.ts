@@ -8,7 +8,7 @@ class ViewEmployeeList{
     public renderEmployeeList(employees){
         let tableArray="";
 
-        var objectProperty = Object.getOwnPropertyNames(employees.get()[1]);
+        let objectProperty = ["First Name","Last Name","Complexity","Floor","ID","Shift List"];
 
         for(let i =0; i < objectProperty.length; i++){
             tableArray+="<th>"+objectProperty[i]+"</th>";
@@ -48,7 +48,6 @@ class ViewEmployeeList{
     public deleteEmployee(){
         let employeeId = document.forms.deleteEmployee.EmployeeId.value;
         this.adapter.delete("http://localhost:3000/api/Employees/"+employeeId,(text)=>{this.output(text)})
-
     }
 
     public changeEmployee(){
@@ -59,7 +58,7 @@ class ViewEmployeeList{
             "floor": document.forms.changeEmployee.floor.value,
             "id": document.forms.changeEmployee.id.value
         };
-            let urlData = this.help.encodedToUrl(data);
+        let urlData = this.help.encodedToUrl(data);
         this.adapter.put("http://localhost:3000/api/Employees/",urlData,(text)=>{this.output(text)})
     }
 

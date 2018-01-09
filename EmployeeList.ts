@@ -27,7 +27,6 @@
 
 
     public getLowComplexityShift(shift:Shift){
-
         let existingShiftEmployee = this.employeeList; /*.filter((employee) => {
            return  employee.getShiftList().has(shift);
         });*/
@@ -46,5 +45,6 @@
 
         return filterdComplexity;
     }
+
 
 }

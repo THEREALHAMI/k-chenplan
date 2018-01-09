@@ -8,8 +8,7 @@ class ViewTaskList {
 
     public renderTaskList(tasks: TasksList) {
         let tableArray = "";
-        let objectProperty = Object.getOwnPropertyNames(tasks.get()[1]);
-        console.log(objectProperty);
+        let objectProperty = ["Name","Complexity","Floor","ID","Shift List"];
 
         for (let i = 0; i < objectProperty.length; i++) {
             tableArray += "<th>" + objectProperty[i] + "</th>";
@@ -23,6 +22,9 @@ class ViewTaskList {
         }
         return document.getElementById("taskList").innerHTML = tableArray;
 
+    }
+    private output(text){
+        console.log(text);
     }
 
     public addTask(task){
@@ -39,5 +41,22 @@ class ViewTaskList {
 
         this.adapter.post("http://localhost:3000/api/Tasks",  data,(text)=>{this.output(text)});
 
+    }
+
+    public deleteTask(){
+        let taskId = document.forms.deleteTask.taskId.value;
+        this.adapter.delete("http://localhost:3000/api/Tasks/"+taskId,(text)=>{this.output(text)})
+    }
+
+    public changeTask(){
+        let data = {
+            "name" :document.forms.changeTask.vorname.value,
+            "complexity": document.forms.changeTask.complexity.value,
+            "floor": document.forms.changeTask.floor.value,
+            "id": document.forms.changeTask.id.value
+        };
+        console.log(data);
+        let urlData = this.help.encodedToUrl(data);
+        this.adapter.put("http://localhost:3000/api/Tasks/",urlData,(text)=>{this.output(text)})
     }
 }

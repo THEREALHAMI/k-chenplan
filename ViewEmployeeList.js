@@ -5,7 +5,7 @@ var ViewEmployeeList = (function () {
     }
     ViewEmployeeList.prototype.renderEmployeeList = function (employees) {
         var tableArray = "";
-        var objectProperty = Object.getOwnPropertyNames(employees.get()[1]);
+        var objectProperty = ["First Name", "Last Name", "Complexity", "Floor", "ID", "Shift List"];
         for (var i = 0; i < objectProperty.length; i++) {
             tableArray += "<th>" + objectProperty[i] + "</th>";
         }

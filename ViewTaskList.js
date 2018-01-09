@@ -5,8 +5,7 @@ var ViewTaskList = (function () {
     }
     ViewTaskList.prototype.renderTaskList = function (tasks) {
         var tableArray = "";
-        var objectProperty = Object.getOwnPropertyNames(tasks.get()[1]);
-        console.log(objectProperty);
+        var objectProperty = ["Name", "Complexity", "Floor", "ID", "Shift List"];
         for (var i = 0; i < objectProperty.length; i++) {
             tableArray += "<th>" + objectProperty[i] + "</th>";
         }
@@ -17,6 +16,9 @@ var ViewTaskList = (function () {
                 "<td>" + tasks.get()[i].getId() + "</td></tr>";
         }
         return document.getElementById("taskList").innerHTML = tableArray;
+    };
+    ViewTaskList.prototype.output = function (text) {
+        console.log(text);
     };
     ViewTaskList.prototype.addTask = function (task) {
         var _this = this;
@@ -29,6 +31,23 @@ var ViewTaskList = (function () {
         var data = this.help.encodedToUrl(task);
         console.log(data);
         this.adapter.post("http://localhost:3000/api/Tasks", data, function (text) { _this.output(text); });
+    };
+    ViewTaskList.prototype.deleteTask = function () {
+        var _this = this;
+        var taskId = document.forms.deleteTask.taskId.value;
+        this.adapter.delete("http://localhost:3000/api/Tasks/" + taskId, function (text) { _this.output(text); });
+    };
+    ViewTaskList.prototype.changeTask = function () {
+        var _this = this;
+        var data = {
+            "name": document.forms.changeTask.vorname.value,
+            "complexity": document.forms.changeTask.complexity.value,
+            "floor": document.forms.changeTask.floor.value,
+            "id": document.forms.changeTask.id.value
+        };
+        console.log(data);
+        var urlData = this.help.encodedToUrl(data);
+        this.adapter.put("http://localhost:3000/api/Tasks/", urlData, function (text) { _this.output(text); });
     };
     return ViewTaskList;
 }());

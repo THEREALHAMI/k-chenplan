@@ -60,7 +60,7 @@
         <input type="submit" value="Delete Employee">
     </form><br /><br /><br /><br /><br /><br />
 
-    <form  name="changeEmployee" method="post" onsubmit="app.viewEmployeesListe.changeEmployee(); return false">
+    <form  name="changeEmployee" method="post" onsubmit="app.viewEmployeeList.changeEmployee(); return false">
         <label>Id : </label><input name="id" type="number" value="" placeholder="Id eingeben"> <br />  <br />
         <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
         <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
@@ -73,33 +73,15 @@
         </select>
 
         <br /><br />
-        <input type="submit" value="Add Employee">
+        <input type="submit" value="Change Employee">
 
-    </form>
+    </form><br /><br /><br /><br /><br /><br />
+    <table border="1" id="taskEmployeeList"></table>
 
 
 
 
-    <table border="1" id="taskEmployeeList"></table><br /><br /><br /><br /><br /><br />
-   <!-- <button onclick="app.renderTaskEmployee()">TaskEmployeeList</button> -->
-    <table border="0" id="taskList"></table>
-    <button onclick="app.viewTaskList.renderTaskList(app.tasks)" >Current Tasks</button><br /><br /><br /><br /><br /><br />
 
-    <form  name="addTask" method="post" onsubmit="app.viewTaskList.addTask(app.tasks); return false">
-        <label>Name : </label> <input name="name" type="text" value="" placeholder="Name" ><br /><br />
-        <label>Complexity : </label><input name="complexity" type="number" value="0" placeholder="0"><br /><br />
-
-        <select name="floor">
-            <option value="Etage">Etage w&auml;hlen </option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-
-        <br /><br />
-        <input type="submit" value="Add Task">
-
-    </form><br /><br />
 
 
 
