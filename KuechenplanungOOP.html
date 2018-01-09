@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
 
     <meta charset="UTF-8">
     <script src="Kuchenplaner.js"></script>
@@ -11,35 +10,100 @@
     <script src="ShiftList.js"></script>
     <script src="Shift.js"></script>
     <script src="TaskEmployee.js"></script>
+    <script src="ViewEmployeeList.js"></script>
+    <script src="ViewTaskList.js"></script>
+    <script src="ViewTaskEmployee.js"></script>
+    <script src="AjaxAdapter.js"></script>
+    <script src="EmployeeList.js"></script>
+    <script src="ViewEmployeeList.js"></script>
+    <script src="Helper.js"></script>
+
 
     <script>
         var app = new Kuchenplaner();
     </script>
 
+    <style>
+        body{
+            text-align: center;
+        }
+        td{
+            padding: 5px;
+        }
+    </style>
+
+
 </head>
 <body>
-    
-    <table border="1" id="employeeList"></table>
-    <button id="viewEmployeeList" onclick="app.viewEmployeeList()">Current Employees</button><br /><br /><br /><br />
+    <table border="0" id="employeeList"></table>
+    <button onclick="app.viewEmployeeList.renderEmployeeList(app.employees)" >Current Employees</button><br /><br /><br /><br />
 
+    <form  name="addEmployee" method="post" onsubmit="app.viewEmployeeList.addEmployee(app.employees); return false">
+        <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
+        <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
 
-    <form name="addEmployee" onsubmit="app.addEmployee(); return false">
-       <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" required><br /><br />
-        <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann" required><br /><br />
-        <label> Etage : </label>
-        <select  name="etage" typeof="number">
-            <option value="2" >2</option>
-            <option value="3" selected>3</option>
+        <select name="floor">
+            <option value="Etage">Etage w&auml;hlen </option>
+            <option value="2">2</option>
+            <option value="3">3</option>
             <option value="4">4</option>
         </select>
+
         <br /><br />
         <input type="submit" value="Add Employee">
+
+    </form><br /><br />
+
+    <form name="deleteEmployee" method="post" onsubmit="app.viewEmployeeList.deleteEmployee(); return false">
+
+        <input name="EmployeeId" type="number" value="" placeholder="ID eingeben"> <br /> <br />
+        <input type="submit" value="Delete Employee">
+    </form><br /><br /><br /><br /><br /><br />
+
+    <form  name="changeEmployee" method="post" onsubmit="app.viewEmployeesListe.changeEmployee(); return false">
+        <label>Id : </label><input name="id" type="number" value="" placeholder="Id eingeben"> <br />  <br />
+        <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
+        <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
+        <label>complexity : </label><input name="complexity" type="number" value="0" placeholder="0"><br /><br />
+        <select name="floor">
+            <option value="Etage">Etage w&auml;hlen </option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <br /><br />
+        <input type="submit" value="Add Employee">
+
     </form>
 
-    <table border="1" id="taskEmployeeList"></table>
 
 
-   <!-- <button onclick="app.addEmployee()"> Mitarbeiter Hinzuf&uuml;gen</button> -->
+
+    <table border="1" id="taskEmployeeList"></table><br /><br /><br /><br /><br /><br />
+   <!-- <button onclick="app.renderTaskEmployee()">TaskEmployeeList</button> -->
+    <table border="0" id="taskList"></table>
+    <button onclick="app.viewTaskList.renderTaskList(app.tasks)" >Current Tasks</button><br /><br /><br /><br /><br /><br />
+
+    <form  name="addTask" method="post" onsubmit="app.viewTaskList.addTask(app.tasks); return false">
+        <label>Name : </label> <input name="name" type="text" value="" placeholder="Name" ><br /><br />
+        <label>Complexity : </label><input name="complexity" type="number" value="0" placeholder="0"><br /><br />
+
+        <select name="floor">
+            <option value="Etage">Etage w&auml;hlen </option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <br /><br />
+        <input type="submit" value="Add Task">
+
+    </form><br /><br />
+
+
+
+
 
 </body>
 </html>

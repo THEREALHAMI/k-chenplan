@@ -1,0 +1,16 @@
+Index: TaskEmployee.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- TaskEmployee.ts	(date 1513062944551)
++++ TaskEmployee.ts	(date 1513062944551)
+@@ -56,7 +56,7 @@
+     }
+ 
+     public employeefromTaskandShift(){
+-
++        return this.taskEmployeeList;
+     }
+ 
+ }
