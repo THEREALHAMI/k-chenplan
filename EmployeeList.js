@@ -4,6 +4,7 @@ var EmployeesList = (function () {
         this.employeeList = [];
         this.adapter = new AjaxAdapter();
         this.adapter.get("http://localhost:3000/api/Employees", function (data) { _this.employeeFromDatabank(data); });
+        console.log(this.employeeList);
     }
     EmployeesList.prototype.addEmployee = function (employee) {
         this.employeeList.push(employee);

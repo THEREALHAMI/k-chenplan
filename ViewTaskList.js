@@ -40,7 +40,7 @@ var ViewTaskList = (function () {
     ViewTaskList.prototype.changeTask = function () {
         var _this = this;
         var data = {
-            "name": document.forms.changeTask.vorname.value,
+            "name": document.forms.changeTask.name.value,
             "complexity": document.forms.changeTask.complexity.value,
             "floor": document.forms.changeTask.floor.value,
             "id": document.forms.changeTask.id.value

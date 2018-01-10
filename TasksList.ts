@@ -4,7 +4,6 @@ class TasksList{
 
     constructor() {
         this.adapter.get("http://localhost:3000/api/Tasks",(data)=>{this.taskFromDatabank(data)});
-        console.log(this.tasksList);
     }
 
     private taskFromDatabank(data)

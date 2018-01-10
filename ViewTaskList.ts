@@ -50,7 +50,7 @@ class ViewTaskList {
 
     public changeTask(){
         let data = {
-            "name" :document.forms.changeTask.vorname.value,
+            "name" :document.forms.changeTask.name.value,
             "complexity": document.forms.changeTask.complexity.value,
             "floor": document.forms.changeTask.floor.value,
             "id": document.forms.changeTask.id.value

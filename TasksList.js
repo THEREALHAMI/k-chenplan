@@ -4,7 +4,6 @@ var TasksList = (function () {
         this.tasksList = [];
         this.adapter = new AjaxAdapter();
         this.adapter.get("http://localhost:3000/api/Tasks", function (data) { _this.taskFromDatabank(data); });
-        console.log(this.tasksList);
     }
     TasksList.prototype.taskFromDatabank = function (data) {
         var _this = this;
