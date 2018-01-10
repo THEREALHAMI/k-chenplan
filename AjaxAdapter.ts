@@ -7,7 +7,10 @@ class AjaxAdapter implements IAjaxAdapter{
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = (() => {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> Chris
                   let data =   JSON.parse( xhttp.responseText);
                     successCallback(data);
             }
@@ -17,7 +20,11 @@ class AjaxAdapter implements IAjaxAdapter{
         xhttp.send();
     }
     post(url, data, successCallBack){
+<<<<<<< HEAD
         var xhttp = new XMLHttpRequest();
+=======
+        let xhttp = new XMLHttpRequest();
+>>>>>>> Chris
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let text = "Successfully"
@@ -29,7 +36,11 @@ class AjaxAdapter implements IAjaxAdapter{
         xhttp.send(data);
     }
     put(url, data, successCallback){
+<<<<<<< HEAD
         var xhttp = new XMLHttpRequest();
+=======
+        let xhttp = new XMLHttpRequest();
+>>>>>>> Chris
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let text = "Successfully";
@@ -41,7 +52,11 @@ class AjaxAdapter implements IAjaxAdapter{
         xhttp.send(data);
     }
     delete(url,successCallBack){
+<<<<<<< HEAD
         var xhttp = new XMLHttpRequest();
+=======
+        let xhttp = new XMLHttpRequest();
+>>>>>>> Chris
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let text = "Employee deleted";

@@ -8,7 +8,11 @@ class ViewEmployeeList{
     public renderEmployeeList(employees){
         let tableArray="";
 
+<<<<<<< HEAD
         var objectProperty = Object.getOwnPropertyNames(employees.get()[1]);
+=======
+        let objectProperty = ["First Name","Last Name","Complexity","Floor","ID","Shift List"];
+>>>>>>> Chris
 
         for(let i =0; i < objectProperty.length; i++){
             tableArray+="<th>"+objectProperty[i]+"</th>";
@@ -17,7 +21,13 @@ class ViewEmployeeList{
 
             tableArray+="<tr><td>" + employees.get()[i].getFirstName() + "</td>"+
                 "<td>" + employees.get()[i].getLastName() + "</td>" +
+<<<<<<< HEAD
                 "<td>" + employees.get()[i].getComplexity()+ "</td><td>" +employees.get()[i].getFloor() +"</td><td>" + employees.get()[i].getId() +"</td></tr>";
+=======
+                "<td>" + employees.get()[i].getComplexity()+ "</td>"+
+                "<td>" +employees.get()[i].getFloor() +"</td>"+
+                "<td>" + employees.get()[i].getId() +"</td></tr>";
+>>>>>>> Chris
         }
         return document.getElementById("employeeList").innerHTML = tableArray;
 
@@ -34,7 +44,11 @@ class ViewEmployeeList{
 
       let data = this.help.encodedToUrl(employee);
 
+<<<<<<< HEAD
 
+=======
+    console.log(data);
+>>>>>>> Chris
         this.adapter.post("http://localhost:3000/api/Employees",  data,(text)=>{this.output(text)});
 
     }
@@ -46,7 +60,10 @@ class ViewEmployeeList{
     public deleteEmployee(){
         let employeeId = document.forms.deleteEmployee.EmployeeId.value;
         this.adapter.delete("http://localhost:3000/api/Employees/"+employeeId,(text)=>{this.output(text)})
+<<<<<<< HEAD
 
+=======
+>>>>>>> Chris
     }
 
     public changeEmployee(){
@@ -57,7 +74,11 @@ class ViewEmployeeList{
             "floor": document.forms.changeEmployee.floor.value,
             "id": document.forms.changeEmployee.id.value
         };
+<<<<<<< HEAD
             let urlData = this.help.encodedToUrl(data);
+=======
+        let urlData = this.help.encodedToUrl(data);
+>>>>>>> Chris
         this.adapter.put("http://localhost:3000/api/Employees/",urlData,(text)=>{this.output(text)})
     }
 

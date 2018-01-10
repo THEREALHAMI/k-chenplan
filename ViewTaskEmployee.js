@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var ViewTaskEmployee = /** @class */ (function () {
+=======
+var ViewTaskEmployee = (function () {
+>>>>>>> Chris
     function ViewTaskEmployee() {
     }
     ViewTaskEmployee.prototype.renderTaskEmployee = function (taskEmployee, tasks) {

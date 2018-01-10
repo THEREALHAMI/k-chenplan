@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var Employee = /** @class */ (function () {
+=======
+var Employee = (function () {
+>>>>>>> Chris
     function Employee(firstname, lastname, floor, complexity, id) {
         this.firstname = '';
         this.lastname = '';

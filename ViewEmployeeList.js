@@ -1,18 +1,32 @@
+<<<<<<< HEAD
 var ViewEmployeeList = /** @class */ (function () {
+=======
+var ViewEmployeeList = (function () {
+>>>>>>> Chris
     function ViewEmployeeList() {
         this.adapter = new AjaxAdapter();
         this.help = new Helper();
     }
     ViewEmployeeList.prototype.renderEmployeeList = function (employees) {
         var tableArray = "";
+<<<<<<< HEAD
         var objectProperty = Object.getOwnPropertyNames(employees.get()[1]);
+=======
+        var objectProperty = ["First Name", "Last Name", "Complexity", "Floor", "ID", "Shift List"];
+>>>>>>> Chris
         for (var i = 0; i < objectProperty.length; i++) {
             tableArray += "<th>" + objectProperty[i] + "</th>";
         }
         for (var i = 0; i < employees.get().length; i++) {
             tableArray += "<tr><td>" + employees.get()[i].getFirstName() + "</td>" +
                 "<td>" + employees.get()[i].getLastName() + "</td>" +
+<<<<<<< HEAD
                 "<td>" + employees.get()[i].getComplexity() + "</td><td>" + employees.get()[i].getFloor() + "</td><td>" + employees.get()[i].getId() + "</td></tr>";
+=======
+                "<td>" + employees.get()[i].getComplexity() + "</td>" +
+                "<td>" + employees.get()[i].getFloor() + "</td>" +
+                "<td>" + employees.get()[i].getId() + "</td></tr>";
+>>>>>>> Chris
         }
         return document.getElementById("employeeList").innerHTML = tableArray;
     };
@@ -25,6 +39,10 @@ var ViewEmployeeList = /** @class */ (function () {
         var employeeFloorInt = parseInt(employeeFloor);
         employee = new Employee(employeeFirstName, employeeLastName, employeeFloorInt, 0);
         var data = this.help.encodedToUrl(employee);
+<<<<<<< HEAD
+=======
+        console.log(data);
+>>>>>>> Chris
         this.adapter.post("http://localhost:3000/api/Employees", data, function (text) { _this.output(text); });
     };
     ViewEmployeeList.prototype.output = function (text) {

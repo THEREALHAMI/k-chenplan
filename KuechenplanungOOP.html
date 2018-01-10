@@ -11,6 +11,10 @@
     <script src="Shift.js"></script>
     <script src="TaskEmployee.js"></script>
     <script src="ViewEmployeeList.js"></script>
+<<<<<<< HEAD
+=======
+    <script src="ViewTaskList.js"></script>
+>>>>>>> Chris
     <script src="ViewTaskEmployee.js"></script>
     <script src="AjaxAdapter.js"></script>
     <script src="EmployeeList.js"></script>
@@ -35,9 +39,15 @@
 </head>
 <body>
     <table border="0" id="employeeList"></table>
+<<<<<<< HEAD
     <button onclick="app.viewEmployeesListe.renderEmployeeList(app.employees)" >Current Employees</button><br /><br /><br /><br />
 
     <form  name="addEmployee" method="post" onsubmit="app.viewEmployeesListe.addEmployee(app.employees); return false">
+=======
+    <button onclick="app.viewEmployeeList.renderEmployeeList(app.employees)" >Current Employees</button><br /><br /><br /><br />
+
+    <form  name="addEmployee" method="post" onsubmit="app.viewEmployeeList.addEmployee(app.employees); return false">
+>>>>>>> Chris
         <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
         <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
 
@@ -53,13 +63,21 @@
 
     </form><br /><br />
 
+<<<<<<< HEAD
     <form name="deleteEmployee" method="post" onsubmit="app.viewEmployeesListe.deleteEmployee(); return false">
+=======
+    <form name="deleteEmployee" method="post" onsubmit="app.viewEmployeeList.deleteEmployee(); return false">
+>>>>>>> Chris
 
         <input name="EmployeeId" type="number" value="" placeholder="ID eingeben"> <br /> <br />
         <input type="submit" value="Delete Employee">
     </form><br /><br /><br /><br /><br /><br />
 
+<<<<<<< HEAD
     <form  name="changeEmployee" method="post" onsubmit="app.viewEmployeesListe.changeEmployee(); return false">
+=======
+    <form  name="changeEmployee" method="post" onsubmit="app.viewEmployeeList.changeEmployee(); return false">
+>>>>>>> Chris
         <label>Id : </label><input name="id" type="number" value="" placeholder="Id eingeben"> <br />  <br />
         <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
         <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
@@ -72,6 +90,7 @@
         </select>
 
         <br /><br />
+<<<<<<< HEAD
         <input type="submit" value="Add Employee">
 
     </form>
@@ -85,6 +104,24 @@
 
 
 
+=======
+        <input type="submit" value="Change Employee">
+
+    </form><br /><br /><br /><br /><br /><br />
+    <table border="1" id="taskEmployeeList"></table>
+    <br><br><br>
+
+    <button onclick="location.href='Tasks.html';">To Task Options</button>
+
+
+
+
+
+
+
+
+
+>>>>>>> Chris
 
 </body>
 </html>

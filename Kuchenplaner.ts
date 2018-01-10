@@ -1,6 +1,7 @@
 class Kuchenplaner {
     private employees = new EmployeesList();
     private tasks = new TasksList();
+<<<<<<< HEAD
     private viewEmployeesListe = new ViewEmployeeList();
     private viewTaskEmployee = new ViewTaskEmployee();
 
@@ -8,19 +9,36 @@ class Kuchenplaner {
         window.onload = (()=>{
             this.initKuchenplaner()
 
+=======
+    private viewEmployeeList = new ViewEmployeeList();
+    private viewTaskEmployee = new ViewTaskEmployee();
+    private viewTaskList = new ViewTaskList();
+
+    constructor() {
+        window.onload = (()=>{
+            this.initKuchenplaner();
+>>>>>>> Chris
         })
 
     }
 
 
     private initKuchenplaner(){
+<<<<<<< HEAD
       // this.createDummyEmployees();
        this.createDummyTasks();
        let taskEmployee = new TaskEmployee(this.tasks, this.employees);
        this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.tasks);
 
+=======
+        //this.createDummyEmployees();
+        //this.createDummyTasks();
+        let taskEmployee = new TaskEmployee(this.tasks, this.employees);
+        this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.tasks);
+>>>>>>> Chris
     }
 
+    /*
     private createDummyTasks(){
         let task = new Task('Spühlmaschine',3, 4);
         this.createDummysShift(task.getShiftList());
@@ -37,7 +55,7 @@ class Kuchenplaner {
         task = new Task('Wasserkocher',4,1);
        // this.createDummysShiftEmployeeWasserkocher(task.getShiftList());
         this.tasks.addTask(task);
-    }
+    }*/
     private createDummysShift(shiftList) {
         let shift = new Shift('Montag', '0',7,15);
         shiftList.addShift(shift);

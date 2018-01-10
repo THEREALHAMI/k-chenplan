@@ -3,7 +3,11 @@
     private adapter = new AjaxAdapter();
     constructor() {
         this.adapter.get("http://localhost:3000/api/Employees",(data)=>{this.employeeFromDatabank(data)});
+<<<<<<< HEAD
 
+=======
+        console.log(this.employeeList);
+>>>>>>> Chris
     }
 
     public addEmployee(employee){
@@ -25,9 +29,14 @@
         return this.employeeList;
     }
 
+<<<<<<< HEAD
 
     public getLowComplexityShift(shift:Shift){
 
+=======
+
+    public getLowComplexityShift(shift:Shift){
+>>>>>>> Chris
         let existingShiftEmployee = this.employeeList; /*.filter((employee) => {
            return  employee.getShiftList().has(shift);
         });*/
@@ -47,4 +56,8 @@
         return filterdComplexity;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Chris
 }

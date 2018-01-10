@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var Helper = /** @class */ (function () {
+=======
+var Helper = (function () {
+>>>>>>> Chris
     function Helper() {
     }
     Helper.prototype.encodedToUrl = function (obj) {
