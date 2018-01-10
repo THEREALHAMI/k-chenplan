@@ -1,14 +1,16 @@
 var Employee = (function () {
-    function Employee(firstname, lastname, floor) {
-        this.id = 0;
+    function Employee(firstname, lastname, floor, complexity, id) {
         this.firstname = '';
         this.lastname = '';
         this.complexity = 0;
         this.floor = "";
+        this.id = 0;
         this.shiftList = new ShiftList();
+        this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.floor = floor;
+        this.complexity = complexity;
         this.shiftList.get();
     }
     Employee.prototype.getId = function () {

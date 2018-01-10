@@ -5,11 +5,10 @@ class TaskEmployee{
 
     constructor(tasksList, employeeList){
 
-        //this.assignEmployees();
-        //this.nextEmployees();
 
 
         tasksList.get().forEach((task: Task) => {
+
             task.getShiftList().get().forEach((shift: Shift) => {
 
                 this.taskEmployeeList.push({
@@ -18,19 +17,21 @@ class TaskEmployee{
                     employee: null
                 });
 
-
             });
+
         });
 
-        //console.log(employeeList);
-       // console.log(employeeList.get()[0].shiftList.get().length);
+        console.log(this.taskEmployeeList);
 
-
+      // console.log(employeeList.get()[0].shiftList.get().length);
 
         this.assignEmployees(employeeList);
-       // console.table(this.taskEmployeeList);
-    }
+        //this.giveEmployeebyTaskandShift();
 
+    }
+    public get(){
+        return this.taskEmployeeList;
+    }
 
     public assignEmployees(employeeList){
 
@@ -38,10 +39,6 @@ class TaskEmployee{
 
             //console.log(taskEmployee);
             // get next employee with low complexity and shift
-
-
-            //for(var i=0; i)
-
             let nextEmployee: Employee = employeeList.getLowComplexityShift(taskEmployee.shift)[0];
             if(typeof nextEmployee === "undefined"){
                 console.error('kein Mitarbeiter fuer diese Schicht gefunden ');
@@ -52,5 +49,8 @@ class TaskEmployee{
 
         })
     }
+
+
+
 
 }
