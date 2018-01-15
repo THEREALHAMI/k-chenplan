@@ -3,7 +3,7 @@ class TasksList{
     private adapter = new AjaxAdapter();
 
     constructor() {
-        this.adapter.get("http://localhost:3000/api/Tasks",(data)=>{this.taskFromDatabank(data)});
+        //this.adapter.get("http://localhost:3000/api/Tasks",(data)=>{this.taskFromDatabank(data)});
     }
 
     private taskFromDatabank(data)

@@ -1,15 +1,12 @@
 class TaskEmployee{
     private taskEmployeeList=[];
 
-
-
     constructor(tasksList, employeeList){
-
 
 
         tasksList.get().forEach((task: Task) => {
 
-            task.getShiftList().get().forEach((shift: Shift) => {
+            /*task.getShiftList().get().forEach((shift: Shift) => {
 
                 this.taskEmployeeList.push({
                     shift: shift,
@@ -17,7 +14,7 @@ class TaskEmployee{
                     employee: null
                 });
 
-            });
+            });*/
 
         });
 
@@ -35,9 +32,8 @@ class TaskEmployee{
 
     public assignEmployees(employeeList){
 
-        this.taskEmployeeList.forEach((taskEmployee)=>{
 
-            //console.log(taskEmployee);
+        this.taskEmployeeList.forEach((taskEmployee)=>{
             // get next employee with low complexity and shift
             let nextEmployee: Employee = employeeList.getLowComplexityShift(taskEmployee.shift)[0];
             if(typeof nextEmployee === "undefined"){
@@ -48,6 +44,7 @@ class TaskEmployee{
             nextEmployee.addComplexity(taskEmployee.task.getComplexity());
 
         })
+
     }
 
 

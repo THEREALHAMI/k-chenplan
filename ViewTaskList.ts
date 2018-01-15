@@ -33,7 +33,7 @@ class ViewTaskList {
         let taskComplexity = document.forms.addTask.complexity.value ;
         let taskFloor= document.forms.addTask.floor.value;
         let taskFloorInt = parseInt(taskFloor);
-        task = new Task(taskName,taskComplexity,taskFloorInt,0);
+        task = new Task(taskName,taskComplexity,taskFloorInt,null);
 
 
         let data = this.help.encodedToUrl(task);

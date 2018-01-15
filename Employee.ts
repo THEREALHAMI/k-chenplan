@@ -1,11 +1,10 @@
  class Employee {
-
     private firstname='';
     private lastname = '';
     private complexity = 0;
     private floor="";
     private id = 0;
-    private shiftList = new ShiftList();
+    private shiftList : Array<Shift> = [];
 
     constructor(firstname, lastname, floor, complexity,id) {
         this.id = id;
@@ -13,9 +12,7 @@
         this.lastname = lastname;
         this.floor = floor;
         this.complexity = complexity;
-        this.shiftList.get();
-
-
+        //this.shiftList);
     }
     public getId(){
         return this.id;
@@ -36,6 +33,7 @@
     public getShiftList(){
         return this.shiftList;
     }
+
 
    /* public setName(name) {
         this.name = name;

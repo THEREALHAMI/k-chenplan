@@ -2,8 +2,7 @@
     private employeeList : Array<Employee> = [];
     private adapter = new AjaxAdapter();
     constructor() {
-        this.adapter.get("http://localhost:3000/api/Employees",(data)=>{this.employeeFromDatabank(data)});
-        console.log(this.employeeList);
+        //this.adapter.get("http://localhost:3000/api/Employees",(data)=>{this.employeeFromDatabank(data)});
     }
 
     public addEmployee(employee){

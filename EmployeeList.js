@@ -1,10 +1,8 @@
-var EmployeesList = (function () {
+var EmployeesList = /** @class */ (function () {
     function EmployeesList() {
-        var _this = this;
         this.employeeList = [];
         this.adapter = new AjaxAdapter();
-        this.adapter.get("http://localhost:3000/api/Employees", function (data) { _this.employeeFromDatabank(data); });
-        console.log(this.employeeList);
+        //this.adapter.get("http://localhost:3000/api/Employees",(data)=>{this.employeeFromDatabank(data)});
     }
     EmployeesList.prototype.addEmployee = function (employee) {
         this.employeeList.push(employee);

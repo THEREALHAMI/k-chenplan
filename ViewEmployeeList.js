@@ -1,4 +1,4 @@
-var ViewEmployeeList = (function () {
+var ViewEmployeeList = /** @class */ (function () {
     function ViewEmployeeList() {
         this.adapter = new AjaxAdapter();
         this.help = new Helper();
@@ -25,7 +25,7 @@ var ViewEmployeeList = (function () {
         var employeeLastName = document.forms.addEmployee.nachname.value;
         var employeeFloor = document.forms.addEmployee.floor.value;
         var employeeFloorInt = parseInt(employeeFloor);
-        employee = new Employee(employeeFirstName, employeeLastName, employeeFloorInt, 0);
+        employee = new Employee(employeeFirstName, employeeLastName, employeeFloorInt, 0, null);
         var data = this.help.encodedToUrl(employee);
         console.log(data);
         this.adapter.post("http://localhost:3000/api/Employees", data, function (text) { _this.output(text); });

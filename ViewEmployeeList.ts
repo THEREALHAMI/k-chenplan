@@ -32,7 +32,7 @@ class ViewEmployeeList{
         let employeeLastName = document.forms.addEmployee.nachname.value ;
         let employeeFloor= document.forms.addEmployee.floor.value;
         let employeeFloorInt = parseInt(employeeFloor);
-        employee = new Employee(employeeFirstName,employeeLastName,employeeFloorInt,0);
+        employee = new Employee(employeeFirstName,employeeLastName,employeeFloorInt,0,null);
 
       let data = this.help.encodedToUrl(employee);
 

@@ -1,17 +1,17 @@
-var Employee = (function () {
+var Employee = /** @class */ (function () {
     function Employee(firstname, lastname, floor, complexity, id) {
         this.firstname = '';
         this.lastname = '';
         this.complexity = 0;
         this.floor = "";
         this.id = 0;
-        this.shiftList = new ShiftList();
+        this.shiftList = [];
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.floor = floor;
         this.complexity = complexity;
-        this.shiftList.get();
+        //this.shiftList);
     }
     Employee.prototype.getId = function () {
         return this.id;

@@ -3,18 +3,17 @@ class Task{
     private complexity = 0;
     private floor;
     private id;
-    private shiftList: ShiftList = new ShiftList();
+    private shifts = new ShiftList().shiftListObj;
+
 
     constructor(name,complexity, floor, id){
         this.name = name;
         this.complexity = complexity;
         this.floor = floor;
         this.id = id;
-        this.shiftList.get();
 
     }
     public addcomplexity(){
-
     }
 
     public getName(){
@@ -29,15 +28,14 @@ class Task{
     public getId(){
         return this.id;
     }
+
     public getShiftList(){
-        return this.shiftList;
+        return this.kitchenPlan.shiftList;
     }
 
     public addShift(shift: Shift){
-        this.shiftList.addShift(shift);
+        this.kitchenPlan.shiftList.addShift(shift);
     }
-
-
 }
 
 

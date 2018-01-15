@@ -1,4 +1,4 @@
-var ViewTaskList = (function () {
+var ViewTaskList = /** @class */ (function () {
     function ViewTaskList() {
         this.adapter = new AjaxAdapter();
         this.help = new Helper();
@@ -27,7 +27,7 @@ var ViewTaskList = (function () {
         var taskComplexity = document.forms.addTask.complexity.value;
         var taskFloor = document.forms.addTask.floor.value;
         var taskFloorInt = parseInt(taskFloor);
-        task = new Task(taskName, taskComplexity, taskFloorInt, 0);
+        task = new Task(taskName, taskComplexity, taskFloorInt, null);
         var data = this.help.encodedToUrl(task);
         console.log(data);
         this.adapter.post("http://localhost:3000/api/Tasks", data, function (text) { _this.output(text); });
