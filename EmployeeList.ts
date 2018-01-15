@@ -21,6 +21,19 @@
             this.addEmployee(employee);
         });
     }
+    public pushShiftsToEmployee(shiftList){
+        let shifts = this.filterEmployeeShiftsFromShiftList(shiftList)
+        this.employeeList.forEach((element)=>{
+            element.addShiftList(shifts);
+        })
+    }
+     private filterEmployeeShiftsFromShiftList(shiftList:ShiftList){
+        let employeeShifts = shiftList.get().filter(function(data){
+            return(data.getShiftType() ==="Employee");
+        });
+        return employeeShifts;
+     }
+
 
     public get(): Array<Employee>{
         return this.employeeList;
@@ -28,9 +41,9 @@
 
 
     public getLowComplexityShift(shift:Shift){
-        let existingShiftEmployee = this.employeeList; /*.filter((employee) => {
+        let existingShiftEmployee =  this.employeeList /*.filter((employee) => {
            return  employee.getShiftList().has(shift);
-        });*/
+        }); */
 
         if(existingShiftEmployee.length === 0){
             return existingShiftEmployee;

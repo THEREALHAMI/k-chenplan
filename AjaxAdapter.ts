@@ -12,7 +12,7 @@ class AjaxAdapter implements IAjaxAdapter{
             }
         });
 
-        xhttp.open("GET",url,true);
+        xhttp.open("GET",url,false);
         xhttp.send();
     }
     post(url, data, successCallBack){

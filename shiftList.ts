@@ -20,7 +20,7 @@ class ShiftList{
 
     public shiftFromDatabank(data){
         data.forEach((element)=>{
-            let shift = new Shift(element.name,element.day,element.from, element.to, element.id, element.shiftType);
+            let shift = new Shift(element.name,element.day,element.from, element.to, element.id, element.shiftTableType, element.shiftId);
             this.addShift(shift);
         });
     }

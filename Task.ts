@@ -29,13 +29,14 @@ class Task{
         return this.id;
     }
 
-    public getShiftList(){
-        return this.kitchenPlan.shiftList;
-    }
 
     public addShift(shift: Shift){
-        this.kitchenPlan.shiftList.addShift(shift);
+        this.shiftList.push(shift);
     }
+    public getShiftList(){
+        return this.shiftList;
+    }
+
 }
 
 

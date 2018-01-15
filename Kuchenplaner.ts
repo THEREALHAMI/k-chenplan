@@ -15,14 +15,21 @@ class Kuchenplaner {
     }
 
     private initKuchenplaner(){
-        //this.createDummyEmployees();
-        //this.createDummyTasks();
         this.shiftList.getShifts();
+
         this.employeeList.getEmployees();
+
+        this.employeeList.pushShiftsToEmployee(this.shiftList);
+
+
         this.taskList.getTasks();
+
+        this.taskList.pushShiftsToTask(this.shiftList);
         console.log(this.taskList.get());
+
         //console.log(this.employeeList.get());
         let taskEmployee = new TaskEmployee(this.taskList, this.employeeList);
+
         this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.taskList);
     }
 }

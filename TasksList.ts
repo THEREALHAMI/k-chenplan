@@ -20,6 +20,25 @@ class TasksList{
         });
     }
 
+    public pushShiftsToTask(shiftList){
+        let shifts = this.filterTaskShiftsFromShiftList(shiftList);
+
+        this.tasksList.forEach((element)=>{
+            shifts.forEach((shift)=>{
+                if(element.getId()===shift.getShiftId()){
+                    element.addShift(shift);
+                }
+            });
+        });
+    }
+
+    private filterTaskShiftsFromShiftList(shiftList:ShiftList){
+        let taskShifts = shiftList.get().filter(function(data){
+            return(data.getShiftType() ==="Task");
+        });
+        return taskShifts;
+    }
+
     public addTask(task){
         this.tasksList.push(task)
     }

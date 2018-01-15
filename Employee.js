@@ -1,4 +1,4 @@
-var Employee = (function () {
+var Employee = /** @class */ (function () {
     function Employee(firstname, lastname, floor, complexity, id) {
         this.firstname = '';
         this.lastname = '';
@@ -30,6 +30,9 @@ var Employee = (function () {
     };
     Employee.prototype.getShiftList = function () {
         return this.shiftList;
+    };
+    Employee.prototype.addShiftList = function (shiftList) {
+        this.shiftList = shiftList;
     };
     /* public setName(name) {
          this.name = name;

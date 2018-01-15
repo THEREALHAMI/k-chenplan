@@ -1,4 +1,4 @@
-var Kuchenplaner = (function () {
+var Kuchenplaner = /** @class */ (function () {
     function Kuchenplaner() {
         var _this = this;
         this.employeeList = new EmployeeList();
@@ -12,11 +12,11 @@ var Kuchenplaner = (function () {
         });
     }
     Kuchenplaner.prototype.initKuchenplaner = function () {
-        //this.createDummyEmployees();
-        //this.createDummyTasks();
         this.shiftList.getShifts();
         this.employeeList.getEmployees();
+        this.employeeList.pushShiftsToEmployee(this.shiftList);
         this.taskList.getTasks();
+        this.taskList.pushShiftsToTask(this.shiftList);
         console.log(this.taskList.get());
         //console.log(this.employeeList.get());
         var taskEmployee = new TaskEmployee(this.taskList, this.employeeList);

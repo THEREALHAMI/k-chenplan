@@ -1,4 +1,4 @@
-var TasksList = (function () {
+var TasksList = /** @class */ (function () {
     function TasksList() {
         this.tasksList = [];
         this.adapter = new AjaxAdapter();
@@ -17,6 +17,22 @@ var TasksList = (function () {
             var task = new Task(elment.name, elment.complexity, elment.floor, elment.id);
             _this.addTask(task);
         });
+    };
+    TasksList.prototype.pushShiftsToTask = function (shiftList) {
+        var shifts = this.filterTaskShiftsFromShiftList(shiftList);
+        this.tasksList.forEach(function (element) {
+            shifts.forEach(function (shift) {
+                if (element.getId() === shift.getShiftId()) {
+                    element.addShift(shift);
+                }
+            });
+        });
+    };
+    TasksList.prototype.filterTaskShiftsFromShiftList = function (shiftList) {
+        var taskShifts = shiftList.get().filter(function (data) {
+            return (data.getShiftType() === "Task");
+        });
+        return taskShifts;
     };
     TasksList.prototype.addTask = function (task) {
         this.tasksList.push(task);

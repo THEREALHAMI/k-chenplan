@@ -33,6 +33,9 @@
     public getShiftList(){
         return this.shiftList;
     }
+    public addShiftList(shiftList){
+        this.shiftList  = shiftList;
+    }
 
 
    /* public setName(name) {

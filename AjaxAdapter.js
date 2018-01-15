@@ -1,4 +1,4 @@
-var AjaxAdapter = (function () {
+var AjaxAdapter = /** @class */ (function () {
     function AjaxAdapter() {
     }
     AjaxAdapter.prototype.get = function (url, successCallback) {
@@ -9,7 +9,7 @@ var AjaxAdapter = (function () {
                 successCallback(data);
             }
         });
-        xhttp.open("GET", url, true);
+        xhttp.open("GET", url, false);
         xhttp.send();
     };
     AjaxAdapter.prototype.post = function (url, data, successCallBack) {

@@ -6,7 +6,7 @@ class TaskEmployee{
 
         tasksList.get().forEach((task: Task) => {
 
-            /*task.getShiftList().get().forEach((shift: Shift) => {
+            task.getShiftList().forEach((shift: Shift) => {
 
                 this.taskEmployeeList.push({
                     shift: shift,
@@ -14,7 +14,7 @@ class TaskEmployee{
                     employee: null
                 });
 
-            });*/
+            });
 
         });
 

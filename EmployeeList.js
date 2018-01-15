@@ -1,4 +1,4 @@
-var EmployeeList = (function () {
+var EmployeeList = /** @class */ (function () {
     function EmployeeList() {
         this.employeeList = [];
         this.adapter = new AjaxAdapter();
@@ -21,13 +21,25 @@ var EmployeeList = (function () {
             _this.addEmployee(employee);
         });
     };
+    EmployeeList.prototype.pushShiftsToEmployee = function (shiftList) {
+        var shifts = this.filterEmployeeShiftsFromShiftList(shiftList);
+        this.employeeList.forEach(function (element) {
+            element.addShiftList(shifts);
+        });
+    };
+    EmployeeList.prototype.filterEmployeeShiftsFromShiftList = function (shiftList) {
+        var employeeShifts = shiftList.get().filter(function (data) {
+            return (data.getShiftType() === "Employee");
+        });
+        return employeeShifts;
+    };
     EmployeeList.prototype.get = function () {
         return this.employeeList;
     };
     EmployeeList.prototype.getLowComplexityShift = function (shift) {
         var existingShiftEmployee = this.employeeList; /*.filter((employee) => {
            return  employee.getShiftList().has(shift);
-        });*/
+        }); */
         if (existingShiftEmployee.length === 0) {
             return existingShiftEmployee;
         }

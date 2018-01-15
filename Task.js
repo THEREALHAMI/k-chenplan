@@ -1,4 +1,4 @@
-var Task = (function () {
+var Task = /** @class */ (function () {
     function Task(name, complexity, floor, id) {
         this.name = '';
         this.complexity = 0;
@@ -22,11 +22,11 @@ var Task = (function () {
     Task.prototype.getId = function () {
         return this.id;
     };
-    Task.prototype.getShiftList = function () {
-        return this.kitchenPlan.shiftList;
-    };
     Task.prototype.addShift = function (shift) {
-        this.kitchenPlan.shiftList.addShift(shift);
+        this.shiftList.push(shift);
+    };
+    Task.prototype.getShiftList = function () {
+        return this.shiftList;
     };
     return Task;
 }());
