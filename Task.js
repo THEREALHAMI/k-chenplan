@@ -1,8 +1,8 @@
-var Task = /** @class */ (function () {
+var Task = (function () {
     function Task(name, complexity, floor, id) {
         this.name = '';
         this.complexity = 0;
-        this.shifts = new ShiftList().shiftListObj;
+        this.shiftList = [];
         this.name = name;
         this.complexity = complexity;
         this.floor = floor;

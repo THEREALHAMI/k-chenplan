@@ -6,19 +6,19 @@ class ViewTaskList {
     }
 
 
-    public renderTaskList(tasks: TasksList) {
+    public renderTaskList(taskList: TasksList) {
         let tableArray = "";
         let objectProperty = ["Name","Complexity","Floor","ID","Shift List"];
 
         for (let i = 0; i < objectProperty.length; i++) {
             tableArray += "<th>" + objectProperty[i] + "</th>";
         }
-        for (let i = 0; i < tasks.get().length; i++) {
+        for (let i = 0; i < taskList.get().length; i++) {
 
-            tableArray += "<tr><td>" + tasks.get()[i].getName() + "</td>" +
-                "<td>" + tasks.get()[i].getComplexity()+ "</td>" +
-                "<td>" + tasks.get()[i].getFloor() + "</td>"+
-                "<td>" + tasks.get()[i].getId() + "</td></tr>";
+            tableArray += "<tr><td>" + taskList.get()[i].getName() + "</td>" +
+                "<td>" + taskList.get()[i].getComplexity()+ "</td>" +
+                "<td>" + taskList.get()[i].getFloor() + "</td>"+
+                "<td>" + taskList.get()[i].getId() + "</td></tr>";
         }
         return document.getElementById("taskList").innerHTML = tableArray;
 

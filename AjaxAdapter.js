@@ -1,4 +1,4 @@
-var AjaxAdapter = /** @class */ (function () {
+var AjaxAdapter = (function () {
     function AjaxAdapter() {
     }
     AjaxAdapter.prototype.get = function (url, successCallback) {
@@ -16,7 +16,7 @@ var AjaxAdapter = /** @class */ (function () {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var text = "Successfully";
+                var text = "Successful";
                 successCallBack(text);
             }
         };
@@ -28,7 +28,7 @@ var AjaxAdapter = /** @class */ (function () {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var text = "Successfully";
+                var text = "Successful";
                 successCallback(text);
             }
         };
@@ -40,7 +40,7 @@ var AjaxAdapter = /** @class */ (function () {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var text = "Employee deleted";
+                var text = "Successful";
                 successCallBack(text);
             }
         };

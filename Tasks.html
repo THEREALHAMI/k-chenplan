@@ -42,9 +42,9 @@
 
 <!-- <button onclick="app.renderTaskEmployee()">TaskEmployeeList</button> -->
 <table border="0" id="taskList"></table>
-<button onclick="app.viewTaskList.renderTaskList(app.tasks)" >Current Tasks</button><br /><br /><br /><br /><br /><br />
+<button onclick="app.viewTaskList.renderTaskList(app.taskList)" >Current Tasks</button><br /><br /><br /><br /><br /><br />
 
-<form  name="addTask" method="post" onsubmit="app.viewTaskList.addTask(app.tasks); return false">
+<form  name="addTask" method="post" onsubmit="app.viewTaskList.addTask(app.taskList); return false">
     <label>Name : </label> <input name="name" type="text" value="" placeholder="Name" ><br /><br />
     <label>Complexity : </label><input name="complexity" type="number" value="0" placeholder="0"><br /><br />
 

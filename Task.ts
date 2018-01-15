@@ -3,7 +3,7 @@ class Task{
     private complexity = 0;
     private floor;
     private id;
-    private shifts = new ShiftList().shiftListObj;
+    private shiftList : Array<Shift> = [];
 
 
     constructor(name,complexity, floor, id){

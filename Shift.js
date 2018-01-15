@@ -1,5 +1,5 @@
-var Shift = /** @class */ (function () {
-    function Shift(name, day, from, to, id, shiftTableType) {
+var Shift = (function () {
+    function Shift(name, day, from, to, id, shiftType) {
         this.name = '';
         this.day = null;
         this.timeSpan = {
@@ -7,13 +7,13 @@ var Shift = /** @class */ (function () {
             to: 0
         };
         this.id = null;
-        this.shiftTableType = '';
+        this.shiftType = '';
         this.name = name;
         this.day = day;
         this.timeSpan.from = from;
         this.timeSpan.to = to;
         this.id = id;
-        this.shiftTableType = shiftTableType;
+        this.shiftType = shiftType;
     }
     Shift.prototype.get = function () {
     };

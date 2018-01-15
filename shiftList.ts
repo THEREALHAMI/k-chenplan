@@ -10,8 +10,7 @@ class ShiftList{
     public getShifts(){
         this.adapter.get("http://localhost:3000/api/Shifts",(data)=>{
             if(data) this.shiftListObj = data;
-            //this.shiftfromDatabank(data);
-            console.log(this.shiftListObj);
+            this.shiftFromDatabank(this.shiftListObj);
         });
     }
 
@@ -19,9 +18,9 @@ class ShiftList{
         this.shiftList.push(shift);
     }
 
-    public shiftfromDatabank(data){
+    public shiftFromDatabank(data){
         data.forEach((element)=>{
-            let shift = new Shift(element.name,element.day,element.from, element.to, element.id, element.shiftTableType);
+            let shift = new Shift(element.name,element.day,element.from, element.to, element.id, element.shiftType);
             this.addShift(shift);
         });
     }

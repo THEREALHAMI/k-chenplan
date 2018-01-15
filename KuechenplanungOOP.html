@@ -36,9 +36,9 @@
 </head>
 <body>
     <table border="0" id="employeeList"></table>
-    <button onclick="app.viewEmployeeList.renderEmployeeList(app.employees)" >Current Employees</button><br /><br /><br /><br />
+    <button onclick="app.viewEmployeeList.renderEmployeeList(app.employeeList)" >Current Employees</button><br /><br /><br /><br />
 
-    <form  name="addEmployee" method="post" onsubmit="app.viewEmployeeList.addEmployee(app.employees); return false">
+    <form  name="addEmployee" method="post" onsubmit="app.viewEmployeeList.addEmployee(app.employeeList); return false">
         <label>Vorname : </label> <input name="vorname" type="text" value="" placeholder="Max" ><br /><br />
         <label>Nachname : </label><input name="nachname" type="text" value="" placeholder="Mustermann"><br /><br />
 

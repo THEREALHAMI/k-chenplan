@@ -1,23 +1,25 @@
- class EmployeesList {
+ class EmployeeList {
     private employeeList : Array<Employee> = [];
     private adapter = new AjaxAdapter();
+    public employeeListObj;
     constructor() {
-        //this.adapter.get("http://localhost:3000/api/Employees",(data)=>{this.employeeFromDatabank(data)});
     }
 
     public addEmployee(employee){
         this.employeeList.push(employee);
     }
+    public getEmployees(){
+        this.adapter.get("http://localhost:3000/api/Employees",(data)=>{
+            if(data) this.employeeListObj = data;
+            this.employeeFromDatabank(this.employeeListObj);
+        });
+    }
 
-    private employeeFromDatabank(data)
-    {
+    private employeeFromDatabank(data) {
           data.forEach((elment)=>{
-
           let employee = new Employee(elment.firstname,elment.lastname, elment.floor,elment.complexity , elment.id);
             this.addEmployee(employee);
         });
-
-
     }
 
     public get(): Array<Employee>{

@@ -6,15 +6,15 @@ class Shift{
         to: 0
     };
     private id: number = null ;
-    private shiftTableType : string = '';
+    private shiftType : string = '';
 
-    constructor(name, day, from, to, id, shiftTableType){
+    constructor(name, day, from, to, id, shiftType){
         this.name = name;
         this.day = day;
         this.timeSpan.from = from;
         this.timeSpan.to = to;
         this.id = id;
-        this.shiftTableType = shiftTableType;
+        this.shiftType = shiftType;
 
     }
 

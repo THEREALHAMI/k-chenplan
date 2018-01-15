@@ -1,9 +1,16 @@
-var TasksList = /** @class */ (function () {
+var TasksList = (function () {
     function TasksList() {
         this.tasksList = [];
         this.adapter = new AjaxAdapter();
-        //this.adapter.get("http://localhost:3000/api/Tasks",(data)=>{this.taskFromDatabank(data)});
     }
+    TasksList.prototype.getTasks = function () {
+        var _this = this;
+        this.adapter.get("http://localhost:3000/api/Tasks", function (data) {
+            if (data)
+                _this.taskListObj = data;
+            _this.taskFromDatabank(_this.taskListObj);
+        });
+    };
     TasksList.prototype.taskFromDatabank = function (data) {
         var _this = this;
         data.forEach(function (elment) {

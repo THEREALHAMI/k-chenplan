@@ -1,4 +1,4 @@
-var ShiftList = /** @class */ (function () {
+var ShiftList = (function () {
     function ShiftList() {
         this.shiftList = [];
         this.adapter = new AjaxAdapter();
@@ -8,17 +8,16 @@ var ShiftList = /** @class */ (function () {
         this.adapter.get("http://localhost:3000/api/Shifts", function (data) {
             if (data)
                 _this.shiftListObj = data;
-            //this.shiftfromDatabank(data);
-            console.log(_this.shiftListObj);
+            _this.shiftFromDatabank(_this.shiftListObj);
         });
     };
     ShiftList.prototype.addShift = function (shift) {
         this.shiftList.push(shift);
     };
-    ShiftList.prototype.shiftfromDatabank = function (data) {
+    ShiftList.prototype.shiftFromDatabank = function (data) {
         var _this = this;
         data.forEach(function (element) {
-            var shift = new Shift(element.name, element.day, element.from, element.to, element.id, element.shiftTableType);
+            var shift = new Shift(element.name, element.day, element.from, element.to, element.id, element.shiftType);
             _this.addShift(shift);
         });
     };

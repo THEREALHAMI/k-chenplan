@@ -1,4 +1,4 @@
-var Helper = /** @class */ (function () {
+var Helper = (function () {
     function Helper() {
     }
     Helper.prototype.encodedToUrl = function (obj) {

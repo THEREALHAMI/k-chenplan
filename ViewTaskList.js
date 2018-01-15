@@ -1,19 +1,19 @@
-var ViewTaskList = /** @class */ (function () {
+var ViewTaskList = (function () {
     function ViewTaskList() {
         this.adapter = new AjaxAdapter();
         this.help = new Helper();
     }
-    ViewTaskList.prototype.renderTaskList = function (tasks) {
+    ViewTaskList.prototype.renderTaskList = function (taskList) {
         var tableArray = "";
         var objectProperty = ["Name", "Complexity", "Floor", "ID", "Shift List"];
         for (var i = 0; i < objectProperty.length; i++) {
             tableArray += "<th>" + objectProperty[i] + "</th>";
         }
-        for (var i = 0; i < tasks.get().length; i++) {
-            tableArray += "<tr><td>" + tasks.get()[i].getName() + "</td>" +
-                "<td>" + tasks.get()[i].getComplexity() + "</td>" +
-                "<td>" + tasks.get()[i].getFloor() + "</td>" +
-                "<td>" + tasks.get()[i].getId() + "</td></tr>";
+        for (var i = 0; i < taskList.get().length; i++) {
+            tableArray += "<tr><td>" + taskList.get()[i].getName() + "</td>" +
+                "<td>" + taskList.get()[i].getComplexity() + "</td>" +
+                "<td>" + taskList.get()[i].getFloor() + "</td>" +
+                "<td>" + taskList.get()[i].getId() + "</td></tr>";
         }
         return document.getElementById("taskList").innerHTML = tableArray;
     };

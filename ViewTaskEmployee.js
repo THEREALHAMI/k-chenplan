@@ -1,4 +1,4 @@
-var ViewTaskEmployee = /** @class */ (function () {
+var ViewTaskEmployee = (function () {
     function ViewTaskEmployee() {
     }
     ViewTaskEmployee.prototype.renderTaskEmployee = function (taskEmployee, tasks) {

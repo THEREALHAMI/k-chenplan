@@ -1,8 +1,8 @@
-var Kuchenplaner = /** @class */ (function () {
+var Kuchenplaner = (function () {
     function Kuchenplaner() {
         var _this = this;
-        this.employees = new EmployeesList();
-        this.tasks = new TasksList();
+        this.employeeList = new EmployeeList();
+        this.taskList = new TasksList();
         this.viewEmployeeList = new ViewEmployeeList();
         this.viewTaskEmployee = new ViewTaskEmployee();
         this.viewTaskList = new ViewTaskList();
@@ -15,8 +15,12 @@ var Kuchenplaner = /** @class */ (function () {
         //this.createDummyEmployees();
         //this.createDummyTasks();
         this.shiftList.getShifts();
-        /*let taskEmployee = new TaskEmployee(this.tasks, this.employees);
-        this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.tasks);*/
+        this.employeeList.getEmployees();
+        this.taskList.getTasks();
+        console.log(this.taskList.get());
+        //console.log(this.employeeList.get());
+        var taskEmployee = new TaskEmployee(this.taskList, this.employeeList);
+        this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.taskList);
     };
     return Kuchenplaner;
 }());
