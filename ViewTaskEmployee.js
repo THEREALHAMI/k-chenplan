@@ -1,4 +1,4 @@
-var ViewTaskEmployee = /** @class */ (function () {
+var ViewTaskEmployee = (function () {
     function ViewTaskEmployee() {
     }
     ViewTaskEmployee.prototype.renderTaskEmployee = function (taskEmployee, tasks) {
@@ -16,20 +16,25 @@ var ViewTaskEmployee = /** @class */ (function () {
             return Array.indexOf(name) == index;
         });
         for (var i = 0; i < dayArray.length; i++) {
-            tableArray += "<tr><td> " + dayArray[i] + "</td>" + this.employeeName(dayArray[i]) + "</tr>";
+            tableArray += "<tr><td>" + dayArray[i] + "</td>" + this.employeeName(dayArray[i]) + "</tr>";
         }
-        ;
         document.getElementById("taskEmployeeList").innerHTML = tableArray;
     };
     ViewTaskEmployee.prototype.employeeName = function (day) {
         var _this = this;
         var name = "";
-        this.tasksEmployees.forEach(function (taskEmployee) {
-            _this.tasks.forEach(function (task) {
-                if ((task.name === taskEmployee.task.name) && (taskEmployee.shift.getName() === day)) {
-                    name += "<td>" + taskEmployee.employee.firstname + "</td>";
+        this.tasks.forEach(function (task) {
+            var taskEmployee = _this.tasksEmployees.find(function (taskEmployee) {
+                if ((task.getName() === taskEmployee.task.getName()) && (day === taskEmployee.shift.getName())) {
+                    return true;
                 }
+                return false;
             });
+            if (taskEmployee !== undefined) {
+                name += "<td>" + taskEmployee.employee.getFirstName() + "</td>";
+                return;
+            }
+            name += "<td></td>";
         });
         return name;
     };

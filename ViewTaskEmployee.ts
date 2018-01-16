@@ -37,8 +37,8 @@ class ViewTaskEmployee{
 
 
         for(let i =0; i <dayArray.length; i++){
-            tableArray += `<tr><td> ${dayArray[i]}</td>${this.employeeName(dayArray[i])}</tr>`;
-        };
+            tableArray += `<tr><td>${dayArray[i]}</td>${this.employeeName(dayArray[i])}</tr>`;
+        }
 
 
         document.getElementById("taskEmployeeList").innerHTML= tableArray;
@@ -46,16 +46,24 @@ class ViewTaskEmployee{
     }
 
    private employeeName(day){
-        var name = "";
+        let name = "";
 
-        this.tasksEmployees.forEach((taskEmployee)=>{
-            this.tasks.forEach((task) =>{
-                if( (task.name === taskEmployee.task.name) && (taskEmployee.shift.getName() === day)) {
-                    name += `<td>${taskEmployee.employee.firstname}</td>`;
-                }
-            });
-        });
+       this.tasks.forEach((task) =>{
+           let taskEmployee = this.tasksEmployees.find((taskEmployee) => {
+               if((task.getName() === taskEmployee.task.getName()) && (day === taskEmployee.shift.getName())) {
+                   return true;
+               }
+               return false;
+           });
 
-        return name;
+           if (taskEmployee !== undefined){
+               name += `<td>${taskEmployee.employee.getFirstName()}</td>`;
+               return;
+           }
+
+           name += "<td></td>";
+       });
+
+       return name;
     }
 }

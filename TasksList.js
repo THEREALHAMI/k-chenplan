@@ -1,4 +1,4 @@
-var TasksList = /** @class */ (function () {
+var TasksList = (function () {
     function TasksList() {
         this.tasksList = [];
         this.adapter = new AjaxAdapter();

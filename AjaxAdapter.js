@@ -1,4 +1,4 @@
-var AjaxAdapter = /** @class */ (function () {
+var AjaxAdapter = (function () {
     function AjaxAdapter() {
     }
     AjaxAdapter.prototype.get = function (url, successCallback) {

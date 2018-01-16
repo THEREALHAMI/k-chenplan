@@ -1,4 +1,4 @@
-var ShiftList = /** @class */ (function () {
+var ShiftList = (function () {
     function ShiftList() {
         this.shiftList = [];
         this.adapter = new AjaxAdapter();
@@ -17,7 +17,7 @@ var ShiftList = /** @class */ (function () {
     ShiftList.prototype.shiftFromDatabank = function (data) {
         var _this = this;
         data.forEach(function (element) {
-            var shift = new Shift(element.name, element.day, element.from, element.to, element.id, element.shiftTableType, element.shiftId);
+            var shift = new Shift(element.name, element.day, element.from, element.to, element.id, element.shiftType, element.shiftId);
             _this.addShift(shift);
         });
     };
