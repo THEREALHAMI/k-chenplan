@@ -1,4 +1,4 @@
-var ViewEmployeeList = /** @class */ (function () {
+var ViewEmployeeList = (function () {
     function ViewEmployeeList() {
         this.adapter = new AjaxAdapter();
         this.help = new Helper();

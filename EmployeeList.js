@@ -1,4 +1,4 @@
-var EmployeeList = /** @class */ (function () {
+var EmployeeList = (function () {
     function EmployeeList() {
         this.employeeList = [];
         this.adapter = new AjaxAdapter();

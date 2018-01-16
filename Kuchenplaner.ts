@@ -31,5 +31,6 @@ class Kuchenplaner {
         let taskEmployee = new TaskEmployee(this.taskList, this.employeeList);
 
         this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.taskList);
+        console.log(this.employeeList);
     }
 }

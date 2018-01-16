@@ -1,5 +1,7 @@
 var ViewTaskEmployee = (function () {
     function ViewTaskEmployee() {
+        this.helper = new Helper();
+        this.adapter = new AjaxAdapter();
     }
     ViewTaskEmployee.prototype.renderTaskEmployee = function (taskEmployee, tasks) {
         this.tasks = tasks.get();
@@ -37,6 +39,23 @@ var ViewTaskEmployee = (function () {
             name += "<td></td>";
         });
         return name;
+    };
+    ViewTaskEmployee.prototype.output = function (text) {
+        console.log(text);
+    };
+    ViewTaskEmployee.prototype.saveEmployeeData = function (employeeList) {
+        var _this = this;
+        employeeList.get().forEach(function (employee) {
+            var data = {
+                "firstname": employee.getFirstName(),
+                "lastname": employee.getLastName(),
+                "complexity": employee.getComplexity(),
+                "floor": employee.getFloor(),
+                "id": employee.getId()
+            };
+            var urlData = _this.helper.encodedToUrl(data);
+            _this.adapter.put("http://localhost:3000/api/Employees/", urlData, function (text) { _this.output(text); });
+        });
     };
     return ViewTaskEmployee;
 }());

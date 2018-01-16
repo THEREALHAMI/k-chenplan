@@ -9,6 +9,8 @@ interface taskEmployee{
 class ViewTaskEmployee{
     private tasks: Array<Task>;
     private tasksEmployees : Array<taskEmployee>;
+    private helper = new Helper();
+    private adapter = new AjaxAdapter();
     constructor(){
 
     }
@@ -65,5 +67,28 @@ class ViewTaskEmployee{
        });
 
        return name;
+    }
+
+    private output(text){
+        console.log(text);
+    }
+
+    public saveEmployeeData(employeeList){
+        employeeList.get().forEach((employee)=>{
+            let data = {
+                "firstname" :employee.getFirstName(),
+                "lastname":  employee.getLastName(),
+                "complexity": employee.getComplexity(),
+                "floor": employee.getFloor(),
+                "id": employee.getId()
+            };
+            let urlData = this.helper.encodedToUrl(data);
+            this.adapter.put("http://localhost:3000/api/Employees/",urlData,(text)=>{this.output(text)})
+        });
+
+
+
+
+
     }
 }

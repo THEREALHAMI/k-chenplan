@@ -21,6 +21,7 @@ var Kuchenplaner = (function () {
         //console.log(this.employeeList.get());
         var taskEmployee = new TaskEmployee(this.taskList, this.employeeList);
         this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.taskList);
+        console.log(this.employeeList);
     };
     return Kuchenplaner;
 }());
