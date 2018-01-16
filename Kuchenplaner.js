@@ -17,11 +17,9 @@ var Kuchenplaner = (function () {
         this.employeeList.pushShiftsToEmployee(this.shiftList);
         this.taskList.getTasks();
         this.taskList.pushShiftsToTask(this.shiftList);
-        console.log(this.taskList.get());
         //console.log(this.employeeList.get());
         var taskEmployee = new TaskEmployee(this.taskList, this.employeeList);
         this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.taskList);
-        console.log(this.employeeList);
     };
     return Kuchenplaner;
 }());

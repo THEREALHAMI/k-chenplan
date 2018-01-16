@@ -18,8 +18,6 @@ class TaskEmployee{
 
         });
 
-        console.log(this.taskEmployeeList);
-
       // console.log(employeeList.get()[0].shiftList.get().length);
 
         this.assignEmployees(employeeList);

@@ -25,12 +25,10 @@ class Kuchenplaner {
         this.taskList.getTasks();
 
         this.taskList.pushShiftsToTask(this.shiftList);
-        console.log(this.taskList.get());
 
         //console.log(this.employeeList.get());
         let taskEmployee = new TaskEmployee(this.taskList, this.employeeList);
 
         this.viewTaskEmployee.renderTaskEmployee(taskEmployee, this.taskList);
-        console.log(this.employeeList);
     }
 }
