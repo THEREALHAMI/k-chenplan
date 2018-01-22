@@ -2,7 +2,7 @@ class Helper{
     constructor (){
     }
 
-    public encodedToUrl(obj) {
+    public encodedToUrl(obj:Object) {
             var stringArray = [];
             for(var p in obj)
                 if (obj.hasOwnProperty(p)) {

@@ -9,8 +9,8 @@ interface taskEmployee{
 class ViewTaskEmployee{
     private tasks: Array<Task>;
     private tasksEmployees : Array<taskEmployee>;
-    private helper = new Helper();
-    private adapter = new AjaxAdapter();
+    private helper:Helper = new Helper();
+    private adapter:AjaxAdapter = new AjaxAdapter();
     constructor(){
 
     }
@@ -33,8 +33,8 @@ class ViewTaskEmployee{
             dayArray.push(taskEmployee.get()[i].shift.name);
         }
 
-        dayArray= dayArray.filter( function( name, index, Array ) {
-            return Array.indexOf(name) == index;
+        dayArray= dayArray.filter( function(element, index, Array) {
+            return Array.indexOf(element) == index;
         });
 
 

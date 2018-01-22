@@ -11,16 +11,14 @@ var TaskEmployee = (function () {
                 });
             });
         });
-        // console.log(employeeList.get()[0].shiftList.get().length);
         this.assignEmployees(employeeList);
-        //this.giveEmployeebyTaskandShift();
     }
     TaskEmployee.prototype.get = function () {
         return this.taskEmployeeList;
     };
     TaskEmployee.prototype.assignEmployees = function (employeeList) {
         this.taskEmployeeList.forEach(function (taskEmployee) {
-            // get next employee with low complexity and shift
+            // get next employee with low complexity and shiftList
             var nextEmployee = employeeList.getLowComplexityShift(taskEmployee.shift)[0];
             if (typeof nextEmployee === "undefined") {
                 console.error('kein Mitarbeiter fuer diese Schicht gefunden ');

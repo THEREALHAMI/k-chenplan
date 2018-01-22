@@ -12,10 +12,10 @@ var Kuchenplaner = (function () {
         });
     }
     Kuchenplaner.prototype.initKuchenplaner = function () {
-        this.shiftList.getShifts();
-        this.employeeList.getEmployees();
+        this.shiftList.getShiftsFromDatabank();
+        this.employeeList.getEmployeesFromDatabank();
         this.employeeList.pushShiftsToEmployee(this.shiftList);
-        this.taskList.getTasks();
+        this.taskList.getTaskFromDatabank();
         this.taskList.pushShiftsToTask(this.shiftList);
         //console.log(this.employeeList.get());
         var taskEmployee = new TaskEmployee(this.taskList, this.employeeList);

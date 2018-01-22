@@ -1,5 +1,5 @@
 class TaskEmployee{
-    private taskEmployeeList=[];
+    private taskEmployeeList:Array<any>=[];
 
     constructor(tasksList, employeeList){
 
@@ -18,10 +18,8 @@ class TaskEmployee{
 
         });
 
-      // console.log(employeeList.get()[0].shiftList.get().length);
-
         this.assignEmployees(employeeList);
-        //this.giveEmployeebyTaskandShift();
+
 
     }
     public get(){
@@ -30,9 +28,9 @@ class TaskEmployee{
 
     public assignEmployees(employeeList){
 
-
         this.taskEmployeeList.forEach((taskEmployee)=>{
-            // get next employee with low complexity and shift
+
+            // get next employee with low complexity and shiftList
             let nextEmployee: Employee = employeeList.getLowComplexityShift(taskEmployee.shift)[0];
             if(typeof nextEmployee === "undefined"){
                 console.error('kein Mitarbeiter fuer diese Schicht gefunden ');

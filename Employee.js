@@ -1,10 +1,5 @@
 var Employee = (function () {
     function Employee(firstname, lastname, floor, complexity, id) {
-        this.firstname = '';
-        this.lastname = '';
-        this.complexity = 0;
-        this.floor = "";
-        this.id = 0;
         this.shiftList = [];
         this.id = id;
         this.firstname = firstname;

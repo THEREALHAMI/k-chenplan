@@ -14,8 +14,8 @@ var ViewTaskEmployee = (function () {
         for (var i = 0; i < taskEmployee.get().length; i++) {
             dayArray.push(taskEmployee.get()[i].shift.name);
         }
-        dayArray = dayArray.filter(function (name, index, Array) {
-            return Array.indexOf(name) == index;
+        dayArray = dayArray.filter(function (element, index, Array) {
+            return Array.indexOf(element) == index;
         });
         for (var i = 0; i < dayArray.length; i++) {
             tableArray += "<tr><td>" + dayArray[i] + "</td>" + this.employeeName(dayArray[i]) + "</tr>";

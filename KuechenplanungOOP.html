@@ -54,7 +54,7 @@
 
     </form><br /><br />
 
-    <form name="deleteEmployee" method="post" onsubmit="app.viewEmployeeList.deleteEmployee(); return false">
+    <form name="deleteEmployee" method="post" onsubmit="app.viewEmployeeList.deleteEmployee(document.forms.deleteEmployee.EmployeeId.value); return false">
 
         <input name="EmployeeId" type="number" value="" placeholder="ID eingeben"> <br /> <br />
         <input type="submit" value="Delete Employee">

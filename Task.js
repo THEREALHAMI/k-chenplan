@@ -1,7 +1,5 @@
 var Task = (function () {
     function Task(name, complexity, floor, id) {
-        this.name = '';
-        this.complexity = 0;
         this.shiftList = [];
         this.name = name;
         this.complexity = complexity;

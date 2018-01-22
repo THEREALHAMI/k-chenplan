@@ -1,8 +1,8 @@
 class Task{
-    private name ='';
-    private complexity = 0;
-    private floor;
-    private id;
+    private name:string;
+    private complexity:number;
+    private floor:number;
+    private id:number;
     private shiftList : Array<Shift> = [];
 
 

@@ -33,9 +33,8 @@ var ViewEmployeeList = (function () {
     ViewEmployeeList.prototype.output = function (text) {
         console.log(text);
     };
-    ViewEmployeeList.prototype.deleteEmployee = function () {
+    ViewEmployeeList.prototype.deleteEmployee = function (employeeId) {
         var _this = this;
-        var employeeId = document.forms.deleteEmployee.EmployeeId.value;
         this.adapter.delete("http://localhost:3000/api/Employees/" + employeeId, function (text) { _this.output(text); });
     };
     ViewEmployeeList.prototype.changeEmployee = function () {

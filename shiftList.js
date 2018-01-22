@@ -3,18 +3,18 @@ var ShiftList = (function () {
         this.shiftList = [];
         this.adapter = new AjaxAdapter();
     }
-    ShiftList.prototype.getShifts = function () {
+    ShiftList.prototype.getShiftsFromDatabank = function () {
         var _this = this;
         this.adapter.get("http://localhost:3000/api/Shifts", function (data) {
             if (data)
                 _this.shiftListObj = data;
-            _this.shiftFromDatabank(_this.shiftListObj);
+            _this.createNewShifts(_this.shiftListObj);
         });
     };
     ShiftList.prototype.addShift = function (shift) {
         this.shiftList.push(shift);
     };
-    ShiftList.prototype.shiftFromDatabank = function (data) {
+    ShiftList.prototype.createNewShifts = function (data) {
         var _this = this;
         data.forEach(function (element) {
             var shift = new Shift(element.name, element.day, element.from, element.to, element.id, element.shiftType, element.shiftId);
@@ -37,13 +37,5 @@ var ShiftList = (function () {
         }
         return false;
     };
-    ShiftList.prototype.filterTimeSpan = function (from, to) {
-    };
     return ShiftList;
 }());
-/*
-  if(JSON.stringify(shift) === JSON.stringify(this.shiftList[i])){
-sshift.getTimeSpan().to
-
-                return true;
-            }*/ 

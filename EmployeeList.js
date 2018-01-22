@@ -6,15 +6,15 @@ var EmployeeList = (function () {
     EmployeeList.prototype.addEmployee = function (employee) {
         this.employeeList.push(employee);
     };
-    EmployeeList.prototype.getEmployees = function () {
+    EmployeeList.prototype.getEmployeesFromDatabank = function () {
         var _this = this;
         this.adapter.get("http://localhost:3000/api/Employees", function (data) {
             if (data)
                 _this.employeeListObj = data;
-            _this.employeeFromDatabank(_this.employeeListObj);
+            _this.createNewEmployee(_this.employeeListObj);
         });
     };
-    EmployeeList.prototype.employeeFromDatabank = function (data) {
+    EmployeeList.prototype.createNewEmployee = function (data) {
         var _this = this;
         data.forEach(function (elment) {
             var employee = new Employee(elment.firstname, elment.lastname, elment.floor, elment.complexity, elment.id);

@@ -1,6 +1,6 @@
 class ViewEmployeeList{
-    private adapter = new AjaxAdapter();
-    private help = new Helper();
+    private adapter:AjaxAdapter = new AjaxAdapter();
+    private help:Helper = new Helper();
     constructor(){
     }
 
@@ -45,8 +45,7 @@ class ViewEmployeeList{
         console.log(text);
     }
 
-    public deleteEmployee(){
-        let employeeId = document.forms.deleteEmployee.EmployeeId.value;
+    public deleteEmployee(employeeId){
         this.adapter.delete("http://localhost:3000/api/Employees/"+employeeId,(text)=>{this.output(text)})
     }
 

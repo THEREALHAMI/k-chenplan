@@ -1,16 +1,16 @@
 
 class ShiftList{
-    private shiftList = [];
-    private adapter = new AjaxAdapter();
-    public shiftListObj;
+    private shiftList:Array<Shift> = [];
+    private adapter:AjaxAdapter = new AjaxAdapter();
+    public shiftListObj:Object;
 
     constructor(){
     }
 
-    public getShifts(){
+    public getShiftsFromDatabank(){
         this.adapter.get("http://localhost:3000/api/Shifts",(data)=>{
             if(data) this.shiftListObj = data;
-            this.shiftFromDatabank(this.shiftListObj);
+            this.createNewShifts(this.shiftListObj);
         });
     }
 
@@ -18,7 +18,7 @@ class ShiftList{
         this.shiftList.push(shift);
     }
 
-    public shiftFromDatabank(data){
+    public createNewShifts(data){
         data.forEach((element)=>{
             let shift = new Shift(element.name,element.day,element.from, element.to, element.id, element.shiftType, element.shiftId);
             this.addShift(shift);
@@ -47,14 +47,4 @@ class ShiftList{
         return false;
 
     }
-    public filterTimeSpan(from, to){
-
-    }
 }
-
-/*
-  if(JSON.stringify(shift) === JSON.stringify(this.shiftList[i])){
-sshift.getTimeSpan().to
-
-                return true;
-            }*/

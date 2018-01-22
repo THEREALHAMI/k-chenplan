@@ -1,9 +1,9 @@
  class Employee {
-    private firstname='';
-    private lastname = '';
-    private complexity = 0;
-    private floor="";
-    private id = 0;
+    private firstname:string;
+    private lastname:string;
+    private complexity:number;
+    private floor:number;
+    private id:number;
     private shiftList : Array<Shift> = [];
 
     constructor(firstname, lastname, floor, complexity,id) {

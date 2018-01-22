@@ -1,21 +1,21 @@
  class EmployeeList {
     private employeeList : Array<Employee> = [];
     private adapter = new AjaxAdapter();
-    public employeeListObj;
+    public employeeListObj:Object;
     constructor() {
     }
 
     public addEmployee(employee){
         this.employeeList.push(employee);
     }
-    public getEmployees(){
+    public getEmployeesFromDatabank(){
         this.adapter.get("http://localhost:3000/api/Employees",(data)=>{
             if(data) this.employeeListObj = data;
-            this.employeeFromDatabank(this.employeeListObj);
+            this.createNewEmployee(this.employeeListObj);
         });
     }
 
-    private employeeFromDatabank(data) {
+    private createNewEmployee(data) {
           data.forEach((elment)=>{
           let employee = new Employee(elment.firstname,elment.lastname, elment.floor,elment.complexity , elment.id);
             this.addEmployee(employee);

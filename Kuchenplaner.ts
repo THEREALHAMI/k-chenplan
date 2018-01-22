@@ -1,9 +1,9 @@
 class Kuchenplaner {
-    private employeeList:EmployeeList = new EmployeeList();
-    private taskList: TasksList = new TasksList();
-    private viewEmployeeList = new ViewEmployeeList();
-    private viewTaskEmployee = new ViewTaskEmployee();
-    private viewTaskList = new ViewTaskList();
+    private employeeList: EmployeeList = new EmployeeList();
+    private taskList:TasksList = new TasksList();
+    private viewEmployeeList: ViewEmployeeList = new ViewEmployeeList();
+    private viewTaskEmployee: ViewTaskEmployee = new ViewTaskEmployee();
+    private viewTaskList: ViewTaskList = new ViewTaskList();
 
     private shiftList: ShiftList = new ShiftList();
 
@@ -15,14 +15,14 @@ class Kuchenplaner {
     }
 
     private initKuchenplaner(){
-        this.shiftList.getShifts();
+        this.shiftList.getShiftsFromDatabank();
 
-        this.employeeList.getEmployees();
+        this.employeeList.getEmployeesFromDatabank();
 
         this.employeeList.pushShiftsToEmployee(this.shiftList);
 
 
-        this.taskList.getTasks();
+        this.taskList.getTaskFromDatabank();
 
         this.taskList.pushShiftsToTask(this.shiftList);
 
